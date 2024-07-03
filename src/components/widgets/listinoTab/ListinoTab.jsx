@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './../listinoTab/listinoTab.css'
 import '@progress/kendo-theme-default/dist/all.css';
 import './../../../App.scss';
@@ -8,7 +8,6 @@ import {
   GridColumn as Column,
   GridToolbar,
   getSelectedState,
-  getSelectedStateFromKeyDown,
 } from '@progress/kendo-react-grid';
 import { process } from "@progress/kendo-data-query";
 import { GridPDFExport } from "@progress/kendo-react-pdf";
@@ -61,7 +60,7 @@ const ListinoTab = ({ close, open, openSet, setValue }) => {
   const DetailComponent = (props) => {
     const dataItem = props.dataItem;
 
-    const [p1Originale, setP1Originale] = React.useState(dataItem.Prezzo1)
+    const p1Originale = dataItem.Prezzo1
     
 
     console.log(p1)
@@ -222,9 +221,7 @@ const ListinoTab = ({ close, open, openSet, setValue }) => {
   );
   const [editID, setEditID] = React.useState(null);
   const [dataState, setDataState] = React.useState(initialDataState);
-  const [dataResult, setDataResult] = React.useState(
-    process(data, dataState)
-  );
+  
   const [selectedState, setSelectedState] = React.useState({});
   const [dataItemIndex, setDataItemIndex] = React.useState(0);
   const [show, setShow] = React.useState(false);
@@ -233,15 +230,15 @@ const ListinoTab = ({ close, open, openSet, setValue }) => {
     left: 0,
     top: 0,
   });
-  const [gridData, setGridData] = React.useState(percorso);
+  const gridData = percorso;
   const [sort, setSort] = React.useState(initialSort);
   const [collapsedGroups, setCollapsedGroups] = React.useState([]);
 
   const onSelectionChange = (event) => {
     let targetEl = event.nativeEvent.target;
     let isDetail = false;
-    while (targetEl.tagName != 'BODY') {
-      if (targetEl.tagName == 'TR') {
+    while (targetEl.tagName !== 'BODY') {
+      if (targetEl.tagName === 'TR') {
         if (targetEl.className.indexOf('k-detail-row') >= 0) {
           isDetail = true;
           break;
@@ -263,14 +260,7 @@ const ListinoTab = ({ close, open, openSet, setValue }) => {
       }));
       setData(newData);
     };
-    const onKeyDown = (event) => {
-      const newSelectedState = getSelectedStateFromKeyDown({
-        event,
-        selectedState: selectedState,
-        dataItemKey: DATA_ITEM_KEY,
-      });
-      setSelectedState(newSelectedState);
-    }
+    
 
   };
 
