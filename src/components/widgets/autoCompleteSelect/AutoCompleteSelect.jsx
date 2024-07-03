@@ -235,12 +235,14 @@ const EDIT_FIELD = "inEdit";
   }, [lavorazioni])
 
   React.useEffect((source)=>{
-    const sortTariffa = (array) => {
-      return array.slice().sort((a, b) => a.tariffa - b.tariffa);
-    };
-    const ordSource = sortTariffa(source);
-    setSource(ordSource)
-  },[lavorazioni]);
+    if (source) { // Controlla se source è definito
+      const sortTariffa = (array) => {
+        return array.slice().sort((a, b) => a.tariffa - b.tariffa);
+      };
+      const ordSource = sortTariffa(source);
+      setSource(ordSource);
+    }
+  },[source, lavorazioni])
   
 
   const addLav = (newLav) => {
