@@ -35,8 +35,9 @@ const columns = [
   },
 ];
 
-const AutoCompleteSelect = ({ p1Changer }) => {
-  const [lavorazioni, setLavorazioni] = React.useState([]);
+const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUtente, selectedRow, addLogAnalisi }) => {
+  let analisiFatta = detProps.analisi
+  const [lavorazioni, setLavorazioni] = React.useState(analisiFatta ? analisiFatta : []);
   const [saveState, setSaveState] = React.useState([]);
   const [subTotale, setSubTotale] = React.useState(0);
   const [subTotaleSicurezza, setSubTotaleSicurezza] = React.useState(0);
@@ -53,7 +54,8 @@ const AutoCompleteSelect = ({ p1Changer }) => {
   const [popUpSGenerali, setPopUpSGenerali] = React.useState("")
   const [popUpUtili, setPopUpUtili] = React.useState("")
   const [idCounter, setIdCounter] = React.useState(1)
-  const [filter, setFilter] = React.useState();
+  const [filter, setFilter] = React.useState(null);
+
 
   const [source, setSource] = React.useState([
     { nomeLavorazione: "LavorazioneA", tariffa: 1, unita: "cad", tipo: "MT", tempoQuantita: 0, costoUn: 10 },
@@ -108,55 +110,86 @@ const AutoCompleteSelect = ({ p1Changer }) => {
     { nomeLavorazione: "LavorazioneXX", tariffa: 50, unita: "a corpo", tipo: "MDO", tempoQuantita: 0, costoUn: 423.45 }
   ]);
 
-  
+
   const handleFilterChange = (event) => {
-    if (event) {
-      
-      setFilter(event.filter);
-    }
-  };
+    const filterValues = event.filter.value.toLowerCase().split(' ');
+
+    const filters = filterValues.map(value => ({
+      logic: 'or',
+      filters: [
+        { field: 'nomeLavorazione', operator: 'contains', value: value },
+        { field: 'tariffa', operator: 'contains', value: value }
+      ]
+    }));
+
+    const newFilter = {
+      logic: 'and',
+      filters: filters
+    };
+
+    setFilter(newFilter);
+  }
+
 
 
 
 
   const GridContext = React.createContext({});
-const CommandCell = (props) => {
-  const { remove, cancel } =
-    React.useContext(GridContext);
-  return (
-    <MyCommandCell
-      {...props}
-      remove={remove}
-      cancel={cancel}
-    />
-  );
-};
+  const CommandCell = (props) => {
+    const { remove, cancel } =
+      React.useContext(GridContext);
+    return (
+      <MyCommandCell
+        {...props}
+        remove={remove}
+        cancel={cancel}
+      />
+    );
+  };
 
-const remove = (dataItem) => {
-  console.log(dataItem)
-  const newData = deleteItem(dataItem);
-  setLavorazioni([...newData]);
+ 
 
+  const remove = (dataItem) => {
 
-  const { id, importo, ...cleanedDataItem } = dataItem;
+    const newData = deleteItem(dataItem);
+    setLavorazioni([...newData]);
 
-  setSource((prevSource) => {
-    const updatedSource = [...prevSource, cleanedDataItem];
-    return updatedSource;
-  });
-};
+    const now = new Date();
+      const formattedDate = now.toLocaleDateString('it-IT', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+      }) + ' - ' + now.toLocaleTimeString('it-IT', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
 
-const cancel = (dataItem) => {
-  const originalItem = getItems().find(
-    (p) => p.tariffa === dataItem.tariffa
-  );
-  const newData = lavorazioni.map((item) =>
-    item.tariffa === originalItem.tariffa ? originalItem : item
-  );
-  setLavorazioni(newData);
-};
+      addLogAnalisi({
+        Tariffa: selectedRow.Tariffa,
+        Modifica: `${selectedRow.Tariffa} è stato rimosso ${dataItem.tariffa} dall'analisi`,
+        Utente: nomeUtente,
+        Orario: formattedDate
+      })
 
-const EDIT_FIELD = "inEdit";
+    const { id, importo, ...cleanedDataItem } = dataItem;
+
+    setSource((prevSource) => {
+      const updatedSource = [...prevSource, cleanedDataItem];
+      return updatedSource;
+    });
+  };
+
+  const cancel = (dataItem) => {
+    const originalItem = getItems().find(
+      (p) => p.tariffa === dataItem.tariffa
+    );
+    const newData = lavorazioni.map((item) =>
+      item.tariffa === originalItem.tariffa ? originalItem : item
+    );
+    setLavorazioni(newData);
+  };
+
+  const EDIT_FIELD = "inEdit";
 
 
   const enterEdit = (dataItem, field) => {
@@ -173,13 +206,15 @@ const EDIT_FIELD = "inEdit";
       [EDIT_FIELD]: undefined,
     }));
     setLavorazioni(newLavorazioni);
+
+    
   };
 
   const saveChanges = () => {
     source.splice(0, source.length, ...source);
     setSaveState(lavorazioni);
     setChanges(false);
-    
+
   };
 
   const cancelChanges = () => {
@@ -234,7 +269,7 @@ const EDIT_FIELD = "inEdit";
     updateLavorazioni(lavorazioni);
   }, [lavorazioni])
 
-  React.useEffect((source)=>{
+  React.useEffect((source) => {
     if (source) { // Controlla se source è definito
       const sortTariffa = (array) => {
         return array.slice().sort((a, b) => a.tariffa - b.tariffa);
@@ -242,8 +277,8 @@ const EDIT_FIELD = "inEdit";
       const ordSource = sortTariffa(source);
       setSource(ordSource);
     }
-  },[source, lavorazioni])
-  
+  }, [source, lavorazioni])
+
 
   const addLav = (newLav) => {
     let newSource = source.filter(item => item !== newLav)
@@ -257,6 +292,23 @@ const EDIT_FIELD = "inEdit";
     setSaveState(updatedArray);
     setIdCounter(idCounter + 1)
     setSource(newSource)
+
+    /* const now = new Date();
+      const formattedDate = now.toLocaleDateString('it-IT', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+      }) + ' - ' + now.toLocaleTimeString('it-IT', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      addLogAnalisi({
+        Tariffa: selectedRow.Tariffa,
+        Modifica: `${selectedRow.Tariffa} è stato aggiunto ${newLav.tariffa} all'analisi`,
+        Utente: nomeUtente,
+        Orario: formattedDate
+      }) */
   };
 
 
@@ -279,7 +331,7 @@ const EDIT_FIELD = "inEdit";
       enterEdit={enterEdit}
       editField={EDIT_FIELD}
     />
-  );
+  ); 
 
   const customRowRender = (tr, props) => (
     <RowRender
@@ -293,19 +345,87 @@ const EDIT_FIELD = "inEdit";
   const handleSave = () => {
     if (popUpSicurezza !== "") {
       setPercentualeSicurezzaDato(popUpSicurezza / 100);
+
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('it-IT', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+      }) + ' - ' + now.toLocaleTimeString('it-IT', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      addLogAnalisi({
+        Tariffa: selectedRow.Tariffa,
+        Modifica: `${selectedRow.Tariffa} è stata modicata la percentuale sicurezza nell'analisi`,
+        Utente: nomeUtente,
+        Orario: formattedDate
+      })
     }
     if (popUpSGenerali !== "") {
       setPercentualeSGeneraliDato(popUpSGenerali / 100);
+
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('it-IT', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+      }) + ' - ' + now.toLocaleTimeString('it-IT', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      addLogAnalisi({
+        Tariffa: selectedRow.Tariffa,
+        Modifica: `${selectedRow.Tariffa} è stata modicata la percentuale spese generali nell'analisi`,
+        Utente: nomeUtente,
+        Orario: formattedDate
+      })
     }
     if (popUpUtili !== "") {
       setPercentualeUtiliDato(popUpUtili / 100);
+
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('it-IT', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+      }) + ' - ' + now.toLocaleTimeString('it-IT', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      addLogAnalisi({
+        Tariffa: selectedRow.Tariffa,
+        Modifica: `${selectedRow.Tariffa} è stata modicata la percentuale utili impresa nell'analisi`,
+        Utente: nomeUtente,
+        Orario: formattedDate
+      })
     }
   };
 
-  const handleSaveP1 = () =>{
-    p1Changer(totale)
-    console.log(totale)
-  }
+  const handleSaveP1 = () => {
+    p1Changer(totale);
+    updateDetailComponent(lavorazioni);
+
+    const now = new Date();
+      const formattedDate = now.toLocaleDateString('it-IT', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+      }) + ' - ' + now.toLocaleTimeString('it-IT', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      addLogAnalisi({
+        Tariffa: selectedRow.Tariffa,
+        Modifica: `${selectedRow.Tariffa} è stata modificato il prezzo 1 dall'analisi`,
+        Utente: nomeUtente,
+        Orario: formattedDate
+      })
+  };
 
   const resetStandard = () => {
     setPercentualeSicurezzaDato(2 / 100);
@@ -315,6 +435,8 @@ const EDIT_FIELD = "inEdit";
     setPopUpSGenerali("")
     setPopUpUtili("")
   }
+
+
 
   return (
     <>
@@ -338,10 +460,10 @@ const EDIT_FIELD = "inEdit";
       </div>
       <div className="detGrid">
         <GridContext.Provider
-        value={{
-          remove,
-          cancel
-        }}
+          value={{
+            remove,
+            cancel
+          }}
         >
           <Grid
             data={lavorazioni}

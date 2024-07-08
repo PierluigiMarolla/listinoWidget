@@ -10,7 +10,7 @@ import {
   getSelectedState,
 } from '@progress/kendo-react-grid';
 import { process } from "@progress/kendo-data-query";
-/* import { GridPDFExport } from "@progress/kendo-react-pdf"; */
+import { GridPDFExport } from "@progress/kendo-react-pdf";
 import { Input } from "@progress/kendo-react-inputs";
 import { filterBy } from "@progress/kendo-data-query";
 import { getter } from '@progress/kendo-react-common';
@@ -20,18 +20,12 @@ import computo from './../../../json/listino_abruzzo.json'
 import PropTypes from "prop-types"
 
 
-const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logValue }) => {
+const ListinoTab = ({ close, open, openSet, setValue }) => {
 
 
   const [usaAnalisi, setUsaAnalisi] = React.useState(false)
-  const [toLog, setToLog] = React.useState(null)
-
-  const addLogAnalisi = (value) => {
-    setToLog(value)
-  }
 
   let percorso = computo.PweElencoPrezzi.EPItem;
-
 
 
   const DATA_ITEM_KEY = 'Tariffa';
@@ -70,7 +64,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       item.Tariffa === updatedItem.Tariffa ? updatedItem : item
     );
     setData(updatedData);
-
+    
     // Aggiorna anche l'array principale percorso
     percorso = percorso.map(item =>
       item.Tariffa === updatedItem.Tariffa ? updatedItem : item
@@ -89,98 +83,30 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
     const [manodopera, setManodopera] = React.useState(dataItem.IncMDO)
     const [attrezzature, setAttrezzature] = React.useState(dataItem.IncATTR)
     const [materiali, setMateriali] = React.useState(dataItem.IncMAT)
-
+    
 
     const handleSicurezzaChange = (event) => {
       const updatedSicurezza = event.target.value;
       setSicurezza(updatedSicurezza);
       updateDataItem({ ...dataItem, IncSIC: updatedSicurezza });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Sicurezza`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const handleManodoperaChange = (event) => {
       const updatedManodopera = event.target.value;
       setManodopera(updatedManodopera);
       updateDataItem({ ...dataItem, IncMDO: updatedManodopera });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Manodopera`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const handleAttrezzatureChange = (event) => {
       const updatedAttrezzature = event.target.value;
       setAttrezzature(updatedAttrezzature);
       updateDataItem({ ...dataItem, IncATTR: updatedAttrezzature });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Attrezzature`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const handleMaterialiChange = (event) => {
       const updatedMateriali = event.target.value;
       setMateriali(updatedMateriali);
       updateDataItem({ ...dataItem, IncMAT: updatedMateriali });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Materiali`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const p1Changer = (newValue) => {
@@ -247,15 +173,15 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
               <strong>Incidenza Sicurezza:</strong>
             </label>
             <input
-              type="number"
-              id="sic"
-              value={sicurezza}
-              onChange={handleSicurezzaChange}
-            />
+                type="number"
+                id="sic"
+                value={sicurezza}
+                onChange={handleSicurezzaChange}
+              />
           </div>
           <div>
             <label htmlFor='man'>
-              <strong htmlFor='man'>Incidenza Manodopera:</strong>
+              <strong htmlFor='man'>Incidenza Manodopera:</strong> 
             </label>
             <input
               type="number"
@@ -296,7 +222,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
             <button onClick={openProp}>Proprietà</button>
             <button>Analisi</button>
           </div>
-          <AutoCompleteSelect selectedRow={selectedRow} nomeUtente={nomeUtente} addLogAnalisi={addLogAnalisi} p1Changer={p1Changer} updateDetailComponent={updateLavorazioni} detProps={dataItem} />
+          <AutoCompleteSelect p1Changer={p1Changer} updateDetailComponent={updateLavorazioni} detProps={dataItem} />
         </section>
       </>
     );
@@ -325,7 +251,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
   );
   const [editID, setEditID] = React.useState(null);
   const [dataState, setDataState] = React.useState(initialDataState);
-
+  
   const [selectedState, setSelectedState] = React.useState({});
   const [dataItemIndex, setDataItemIndex] = React.useState(0);
   const [show, setShow] = React.useState(false);
@@ -364,7 +290,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       }));
       setData(newData);
     };
-
+    
 
   };
 
@@ -409,23 +335,6 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
     let data = [...gridData];
     data.splice(dataItemIndex, 1);
     setData(data);
-
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('it-IT', {
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
-    }) + ' - ' + now.toLocaleTimeString('it-IT', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
-    setToLog({
-      Tariffa: selectedRow.Tariffa,
-      Modifica: `${selectedRow.Tariffa} è stata eliminata`,
-      Utente: nomeUtente,
-      Orario: formattedDate
-    })
   };
 
   const handleAddRow = () => {
@@ -434,47 +343,11 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
     };
     setData([newRow, ...data]);
     setEditID(newRow.Tariffa);
-
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('it-IT', {
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
-    }) + ' - ' + now.toLocaleTimeString('it-IT', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
-    setToLog({
-      Tariffa: `${data.length + 1}`,
-      Modifica: `è stata aggiunta una riga`,
-      Utente: nomeUtente,
-      Orario: formattedDate
-    })
   };
 
   const handleEditRow = () => {
     setEditID(selectedRow.Tariffa);
-
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('it-IT', {
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
-    }) + ' - ' + now.toLocaleTimeString('it-IT', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
-    setToLog({
-      Tariffa: selectedRow.Tariffa,
-      Modifica: `${selectedRow.Tariffa} è stato editato`,
-      Utente: nomeUtente,
-      Orario: formattedDate
-    })
   };
-
-  console.log(toLog)
 
   const handleMoveUp = () => {
     let data = [...gridData];
@@ -483,23 +356,6 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       data.splice(dataItemIndex - 1, 0, selectedRow);
       setData(data);
     }
-
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('it-IT', {
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
-    }) + ' - ' + now.toLocaleTimeString('it-IT', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
-    setToLog({
-      Tariffa: selectedRow.Tariffa,
-      Modifica: `${selectedRow.Tariffa} è stato mandato su di una riga`,
-      Utente: nomeUtente,
-      Orario: formattedDate
-    })
   };
 
   const handleMoveDown = () => {
@@ -509,23 +365,6 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       data.splice(dataItemIndex + 1, 0, selectedRow);
       setData(data);
     }
-
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString('it-IT', {
-      day: 'numeric',
-      month: 'numeric',
-      year: 'numeric',
-    }) + ' - ' + now.toLocaleTimeString('it-IT', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
-    setToLog({
-      Tariffa: selectedRow.Tariffa,
-      Modifica: `${selectedRow.Tariffa} è stato mandato giù di una riga`,
-      Utente: nomeUtente,
-      Orario: formattedDate
-    })
   };
 
   const handleOnSelect = (e) => {
@@ -595,7 +434,6 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
   };
 
   const expandChange = (event) => {
-    setSelectedRow(event.dataItem);
     if (!event.dataItem.aggregates) {
       let newData = data.map((item) => {
         if (item[DATA_ITEM_KEY] === event.dataItem[DATA_ITEM_KEY]) {
@@ -614,12 +452,12 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
     }
   };
 
-  /* let gridPDFExport;
+  let gridPDFExport;
   const exportPDF = () => {
     if (gridPDFExport !== null) {
       gridPDFExport.save();
     }
-  }; */
+  };
 
   const dataStateChange = (event) => {
     setDataState(event.dataState);
@@ -631,7 +469,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
         if (item[DATA_ITEM_KEY] === event.dataItem[DATA_ITEM_KEY]) {
           item.expanded = !event.dataItem.expanded;
         }
-
+          
         return item;
       });
       setData(newData);
@@ -697,13 +535,13 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
               onClick={closeEdit}>
               Close Edit
             </button>
-            {/* <button
+            <button
               title="Export PDF"
               className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary margin"
               onClick={exportPDF}
             >
               Export PDF
-            </button> */}
+            </button>
           </div>
           <div>
             <p>Search:</p>
@@ -766,18 +604,14 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
 
   );
 
-  /* function handleClick() {
+  function handleClick() {
     close(false)
     open(true)
     setEditID(null)
-  } */
+  }
 
-  /* function handleClickSet() {
+  function handleClickSet() {
     setValue === false ? openSet(true) : openSet(false);
-  } */
-
-  function handleClickLog() {
-    openLog(true)
   }
 
   return (
@@ -789,26 +623,22 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
             className='k-button k-button-md k-button-solid k-button-solid-primary'>
             Listino
           </button>
-          {/* <button
+          <button
             title='Computo'
             className='k-button k-button-md k-button-solid k-button-solid-secondary'
             onClick={handleClick}>
             Computo
-          </button> */}
+          </button>
         </div>
-        {/* <button
-          title='IMPOSTAZIONI'
-          onClick={handleClickSet}
-        >IMPOSTAZIONI</button> */}
         <button
-          title='Log'
-          onClick={handleClickLog}
-        >LOG</button>
+        title='IMPOSTAZIONI'
+        onClick={handleClickSet}
+        >IMPOSTAZIONI</button>
       </div>
       {grid2}
-      {/* <GridPDFExport ref={(pdfExport) => (gridPDFExport = pdfExport)}>
+      <GridPDFExport ref={(pdfExport) => (gridPDFExport = pdfExport)}>
         {grid2}
-      </GridPDFExport> */}
+      </GridPDFExport>
     </div>
   )
 }
@@ -817,22 +647,14 @@ ListinoTab.propTypes = {
   close: PropTypes.func,
   open: PropTypes.func,
   openSet: PropTypes.func,
-  openLog: PropTypes.func,
   setValue: PropTypes.bool,
-  logValue: PropTypes.bool,
-  nomeUtente: PropTypes.string,
 };
 
 ListinoTab.defaultProps = {
   close: () => { },
   open: () => { },
   openSet: () => { },
-  openLog: () => { },
-
   setValue: false,
-  logValue: false,
-
-  nomeUtente: "",
 };
 
 
