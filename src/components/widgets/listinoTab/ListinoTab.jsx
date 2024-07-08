@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './../listinoTab/listinoTab.css'
 import '@progress/kendo-theme-default/dist/all.css';
 import './../../../App.scss';
