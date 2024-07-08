@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { Grid, GridColumn } from "@progress/kendo-react-grid";
-import log from "./../../../json/log.json"
+import log from "./../../../log.json"
 
 const Log = ({ openLog, logValue }) => {
 
