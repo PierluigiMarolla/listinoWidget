@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './../listinoTab/listinoTab.css'
 import '@progress/kendo-theme-default/dist/all.css';
 import './../../../App.scss';
@@ -780,7 +780,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
     openLog(true)
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     async function updateJSONData(newData) {
       try {
         const response = await fetch('/.netlify/functions/update-json', {
