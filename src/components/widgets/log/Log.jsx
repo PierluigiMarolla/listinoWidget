@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { Grid, GridColumn } from "@progress/kendo-react-grid";
-import log from "./../../../log.json"
+
 
 const Log = ({ openLog, logValue }) => {
 
@@ -27,7 +27,7 @@ const Log = ({ openLog, logValue }) => {
                     style={{
                         height: "400px",
                     }}
-                    data={log}
+                    data={""}
                 >
                     <GridColumn field="Tariffa" title="Tariffa" width="120px" />
                     <GridColumn field="Modifica" title="Modifica" width="300x" />
