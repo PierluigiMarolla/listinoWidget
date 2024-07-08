@@ -19,7 +19,7 @@ const App = () => {
     setNomeUtente(`utente-${Math.floor(Math.random() * 100)}`)
   }, [])
   
-  console.log(nomeUtente)
+
 
 
   function closeListino(newValue) {

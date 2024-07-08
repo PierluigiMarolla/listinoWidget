@@ -804,7 +804,10 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       }
     }
 
-    updateJSONData()
+    if(toLog !== null) {
+      updateJSONData(toLog)
+    }
+    
   }, [toLog])
   
 

@@ -112,7 +112,7 @@ const ComputoTab = ({ close, open }) => {
     process(data, dataState)
   );
 
-  console.log(dataResult)
+
 
   const [page, setPage] = React.useState(initialDataState);
   const [pageSizeValue, setPageSizeValue] = React.useState();
