@@ -474,7 +474,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
     })
   };
 
-  console.log(toLog)
+
 
   const handleMoveUp = () => {
     let data = [...gridData];
@@ -779,6 +779,34 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
   function handleClickLog() {
     openLog(true)
   }
+
+  useEffect(() => {
+    async function updateJSONData(newData) {
+      try {
+        const response = await fetch('/.netlify/functions/update-json', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newData),
+        });
+    
+        if (!response.ok) {
+          throw new Error('Errore durante l\'aggiornamento del file JSON');
+        }
+    
+        const result = await response.json();
+        console.log('Risposta dal server:', result);
+        return result;
+      } catch (error) {
+        console.error('Errore:', error);
+        throw error;
+      }
+    }
+
+    updateJSONData()
+  }, [toLog])
+  
 
   return (
     <div className='chiodo'>
