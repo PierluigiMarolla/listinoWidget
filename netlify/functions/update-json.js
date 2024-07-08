@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
 
   try {
     const newData = JSON.parse(event.body);
-    const filePath = path.resolve(__dirname, 'https://widgetaycc.netlify.app/log.json');
+    const filePath = path.resolve(__dirname, 'log.json');
 
     // Leggi il contenuto del file JSON
     const data = fs.readFileSync(filePath, 'utf8');
