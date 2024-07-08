@@ -9,23 +9,30 @@ exports.handler = async (event, context) => {
     };
   }
 
-  const newData = JSON.parse(event.body);
-  const filePath = path.resolve(__dirname, './../../src/json/log.json');
-
   try {
+    const newData = JSON.parse(event.body);
+    const filePath = path.resolve(__dirname, './../../src/json/log.json');
+
+    // Leggi il contenuto del file JSON
     const data = fs.readFileSync(filePath, 'utf8');
-    const json = JSON.parse(data);
-    Object.assign(json, newData);
-    fs.writeFileSync(filePath, JSON.stringify(json, null, 2), 'utf8');
+    const jsonArray = JSON.parse(data);
+
+    // Aggiungi il nuovo oggetto all'array
+    jsonArray.push(newData);
+
+    // Scrivi il file JSON aggiornato
+    fs.writeFileSync(filePath, JSON.stringify(jsonArray, null, 2), 'utf8');
 
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'File JSON aggiornato con successo' }),
     };
-  } catch (err) {
+  } catch (error) {
+    console.error('Errore durante l\'elaborazione:', error);
+
     return {
       statusCode: 500,
-      body: 'Errore nel leggere o salvare il file JSON',
+      body: JSON.stringify({ error: 'Errore nel leggere o salvare il file JSON' }),
     };
   }
 };
