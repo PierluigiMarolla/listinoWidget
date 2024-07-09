@@ -18,7 +18,8 @@ import { ContextMenu, MenuItem } from "@progress/kendo-react-layout";
 import { mapTree } from '@progress/kendo-react-treelist';
 import computo from './../../../json/listino_abruzzo.json'
 import PropTypes from "prop-types"
-
+import { db} from './../../../firebase';
+import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore"; 
 
 const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logValue }) => {
 
@@ -781,34 +782,32 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
   }
 
   React.useEffect(() => {
-    async function updateJSONData(newData) {
-      try {
-        const response = await fetch('/.netlify/functions/update-json', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(newData),
-        });
-    
-        if (!response.ok) {
-          throw new Error('Errore durante l\'aggiornamento del file JSON');
-        }
-    
-        const result = await response.json();
-        console.log('Risposta dal server:', result);
-        return result;
-      } catch (error) {
-        console.error('Errore:', error);
-        throw error;
-      }
-    }
+    if (toLog) {
+      const sendLogToFirestore = async () => {
+        try {
+          const logRef = doc(db, 'listinoLog', 'CRRef7VlF5hnW2Xy0Fq'); // ID del documento
+          console.log('logRef:', logRef.path);  // Log the document reference path
+          console.log('toLog:', toLog);    // Log the toLog value
 
-    if(toLog !== null) {
-      updateJSONData(toLog)
+          const docSnap = await getDoc(logRef);
+          
+          if (!docSnap.exists()) {
+            console.log('Documento non esiste, creazione in corso...');
+            await setDoc(logRef, { log: [toLog] });
+          } else {
+            await updateDoc(logRef, {
+              log: arrayUnion(toLog)
+            });
+          }
+
+          console.log('Log successfully written!');
+        } catch (error) {
+          console.error('Error writing log: ', error);
+        }
+      };
+      sendLogToFirestore();
     }
-    
-  }, [toLog])
+  }, [toLog]);
   
 
   return (
