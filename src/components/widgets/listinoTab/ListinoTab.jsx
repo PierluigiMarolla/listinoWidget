@@ -16,7 +16,7 @@ import { filterBy } from "@progress/kendo-data-query";
 import { getter } from '@progress/kendo-react-common';
 import { ContextMenu, MenuItem } from "@progress/kendo-react-layout";
 import { mapTree } from '@progress/kendo-react-treelist';
-import computo from './../../../json/listino_abruzzo.json'
+import computo from './../../../json/listino_abruzzo_per_ticket.json'
 import PropTypes from "prop-types"
 import { db} from './../../../firebase';
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore"; 
@@ -40,7 +40,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
   const idGetter = getter(DATA_ITEM_KEY);
   const initialDataState = {
     skip: 0,
-    take: 100,
+    take: 400,
     sort: [
       {
         field: 'Tariffa',
@@ -686,17 +686,17 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
         <GridToolbar>
           <div onClick={closeEdit}>
             <button
-              title="Add new"
+              title="Aggiungi Voce"
               className="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary margin"
               onClick={handleAddRow}
             >
-              Add new
+              Aggiungi Voce
             </button>
             <button
-              title='Close Edit'
+              title='Salva Modifica'
               className='k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary margin'
               onClick={closeEdit}>
-              Close Edit
+              Salva Modifica
             </button>
             {/* <button
               title="Export PDF"
@@ -707,11 +707,11 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
             </button> */}
           </div>
           <div>
-            <p>Search:</p>
+            <p>Cerca:</p>
             <Input onChange={filterData} />
           </div>
           <div>
-            <p>Grouping:</p>
+            <p>Raggruppamento:</p>
             <select onChange={handleGroupChange} defaultValue="IDSupCap.DesSintetica">
               <option value="none">Standard</option>
               <option value="IDSupCap.DesSintetica">Super Capitoli</option>

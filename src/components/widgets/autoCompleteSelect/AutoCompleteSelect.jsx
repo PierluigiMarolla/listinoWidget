@@ -110,9 +110,10 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     { nomeLavorazione: "LavorazioneXX", tariffa: 50, unita: "a corpo", tipo: "MDO", tempoQuantita: 0, costoUn: 423.45 }
   ]);
 
+  
 
   const handleFilterChange = (event) => {
-    const filterValues = event.filter.value.toLowerCase().split(' ');
+    const filterValues = event.filter.value.toLowerCase().split('');
 
     const filters = filterValues.map(value => ({
       logic: 'or',
@@ -342,68 +343,22 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     />
   );
 
+  const [controllo, setControllo] = React.useState(0)
+
   const handleSave = () => {
     if (popUpSicurezza !== "") {
       setPercentualeSicurezzaDato(popUpSicurezza / 100);
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      addLogAnalisi({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stata modicata la percentuale sicurezza nell'analisi`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
+      setControllo(controllo + 1)
     }
     if (popUpSGenerali !== "") {
       setPercentualeSGeneraliDato(popUpSGenerali / 100);
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      addLogAnalisi({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stata modicata la percentuale spese generali nell'analisi`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     }
     if (popUpUtili !== "") {
       setPercentualeUtiliDato(popUpUtili / 100);
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      addLogAnalisi({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stata modicata la percentuale utili impresa nell'analisi`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     }
   };
+
+  console.log(controllo)
 
   const handleSaveP1 = () => {
     p1Changer(totale);
@@ -435,8 +390,6 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     setPopUpSGenerali("")
     setPopUpUtili("")
   }
-
-
 
   return (
     <>

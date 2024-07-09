@@ -13716,50 +13716,6 @@
           "Codice": "IM",
           "IDSpCap": 11
         }
-      },
-      {
-        "TipoEP": 0,
-        "Tariffa": "15.001.070.a",
-        "Articolo": "15.1.70.a",
-        "DesRidotta": "Smaltimento di materiale da demolizioni e rimozioni privo ...  espanso, cartongesso, legname, plastiche o altre impurità",
-        "DesEstesa": "Smaltimento di materiale da demolizioni e rimozioni privo di ulteriori scorie e frammenti diversi. il prezzo compende tutti gli oneri, tasse e contributi da conferire alla discarica autorizzata. L&apos;attestazione dello smaltimento dovrà necessariamente essere attestata a mezzo dell&apos;apposito formulario di identificazione rifiuti ( ex D.Lsg.22/97 e s.m.) debitamente compilato e firmato in ogni sua parte. La consegna del modulo da formulario alla DD.LL. risulterà evidenza oggettiva dello smaltimento avvenuto autorizzando la corresponsione degli oneri a seguire. Il trasportatore Þ pienamente responsabile del della classificazione dichiarata.Codici C.E.R. secondo la normativa vigente- Macerie edili pulite, tipo calcinacci o simili, tegole, laterizi, piastrelle, ecc. in elementi fino a 0,20 m, escluso calcestruzzo cellulare espanso, cartongesso, legname, plastiche o altre impurità",
-        "DesBreve": "",
-        "UnMisura": "t",
-        "Prezzo1": 15.01,
-        "Prezzo2": 0,
-        "Prezzo3": 0,
-        "Prezzo4": 0,
-        "Prezzo5": 0,
-        "IDCap": {
-          "DesSintetica": "PRESTAZIONI PER SMALTIMENTI",
-          "DesEstesa": "PRESTAZIONI PER SMALTIMENTI",
-          "DataInit": "30/12/1899",
-          "Durata": 0,
-          "CodFase": "",
-          "Percentuale": 0,
-          "Codice": 15.1,
-          "IDCap": 11
-        },
-        "CodiceWBSCAP": "",
-        "Flags": 0,
-        "Data": "30/12/1899",
-        "AdrInternet": "",
-        "IncSIC": 0,
-        "IncMDO": 0,
-        "IncMAT": 0,
-        "IncATTR": 0,
-        "TagBIM": "",
-        "PweEPAnalisi": "",
-        "IDSupCap": {
-          "DesSintetica": "IMPIANTI TECNOLOGICI",
-          "DesEstesa": "IMPIANTI TECNOLOGICI-",
-          "DataInit": "30/12/1899",
-          "Durata": 0,
-          "CodFase": "",
-          "Percentuale": 0,
-          "Codice": "IM",
-          "IDSpCap": 11
-        }
       }
     ]
   }
