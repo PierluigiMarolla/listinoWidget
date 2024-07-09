@@ -25,16 +25,16 @@ export const MyCommandCell = (props) => {
             : toggleDialog()
         }
       >
-        {inEdit ? (isNewItem ? "Discard" : "Cancel") : "Remove"}
+        {inEdit ? (isNewItem ? "Discard" : "Cancel") : "Rimuovi"}
       </Button>
       {visible && (
-        <Dialog title={"Delete Data"} onClose={toggleDialog} width={350}>
+        <Dialog title={"Delete Data"} onClose={toggleDialog} width={420}>
           <div>
-            Are you sure you want to delete item with ID {dataItem.tariffa}?
+            Sei sicuro di voler cancellare la voce elementare {dataItem.Tariffa}?
           </div>
           <DialogActionsBar>
-            <Button onClick={onDeleteData}>Delete</Button>
-            <Button onClick={toggleDialog}>Cancel</Button>
+            <Button onClick={onDeleteData}>Rimuovi</Button>
+            <Button onClick={toggleDialog}>Annulla</Button>
           </DialogActionsBar>
         </Dialog>
       )}

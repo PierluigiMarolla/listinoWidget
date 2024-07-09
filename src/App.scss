@@ -137,3 +137,45 @@ body {
   border: 1px solid black;
   cursor: pointer;
 }
+
+.proprety-tab-sections {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.proprety-tab-first input{
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
+
+.proprety-tab-first label{
+  font-size: 16px;
+}
+
+.proprety-tab-long textarea{
+  margin: 10px;
+  height: 60px;
+  width: 88%;
+  resize: none;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
+
+.proprety-tab-long label{
+  font-size: 16px;
+}
+
+.proprety-tab-long {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.m-top{
+  margin-top: 20px;
+}

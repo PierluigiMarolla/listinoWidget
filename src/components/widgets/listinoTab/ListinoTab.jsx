@@ -18,13 +18,13 @@ import { ContextMenu, MenuItem } from "@progress/kendo-react-layout";
 import { mapTree } from '@progress/kendo-react-treelist';
 import computo from './../../../json/listino_abruzzo_per_ticket.json'
 import PropTypes from "prop-types"
-import { db} from './../../../firebase';
-import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore"; 
+import { db } from './../../../firebase';
+import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 
 const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logValue }) => {
 
 
-  const [usaAnalisi, setUsaAnalisi] = React.useState(false)
+/*   const [usaAnalisi, setUsaAnalisi] = React.useState(false) */
   const [toLog, setToLog] = React.useState(null)
 
   const addLogAnalisi = (value) => {
@@ -82,121 +82,108 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
 
   const DetailComponent = (props) => {
 
-    let p1 = 0;
+/*     let p1 = 0; */
     const dataItem = props.dataItem;
-    const p1Originale = dataItem.Prezzo1
+/*     const p1Originale = dataItem.Prezzo1 */
 
     const [sicurezza, setSicurezza] = React.useState(dataItem.IncSIC)
     const [manodopera, setManodopera] = React.useState(dataItem.IncMDO)
     const [attrezzature, setAttrezzature] = React.useState(dataItem.IncATTR)
     const [materiali, setMateriali] = React.useState(dataItem.IncMAT)
+    const [tariffa, setTariffa] = React.useState(dataItem.Tariffa)
+    const [articolo, setArticolo] = React.useState(dataItem.Articolo)
+    const [desRidotta, setDesRidotta] = React.useState(dataItem.DesRidotta)
+    const [desEstesa, setDesEstesa] = React.useState(dataItem.DesEstesa)
+    const [unMisura, setUnMisura] = React.useState(dataItem.UnMisura)
+    const [prezzo1, setPrezzo1] = React.useState(dataItem.Prezzo1)
+    const [prezzo2, setPrezzo2] = React.useState(dataItem.Prezzo2)
+    const [prezzo3, setPrezzo3] = React.useState(dataItem.Prezzo3)
+    const [prezzo4, setPrezzo4] = React.useState(dataItem.Prezzo4)
+    const [prezzo5, setPrezzo5] = React.useState(dataItem.Prezzo5)
 
+    const handleTariffaChange = (event) => {
+      const updatedTariffa = event.target.value;
+      setTariffa(updatedTariffa);
+    };
+
+    const handleArticoloChange = (event) => {
+      const updatedArticolo = event.target.value;
+      setArticolo(updatedArticolo);
+    };
+
+    const handleDesRidottaChange = (event) => {
+      const updatedDesRidotta = event.target.value;
+      setDesRidotta(updatedDesRidotta);
+    };
+
+    const handleDesEstesaChange = (event) => {
+      const updatedDesEstesa = event.target.value;
+      setDesEstesa(updatedDesEstesa);
+    };
+
+    const handleUnMisuraChange = (event) => {
+      const updatedUnMisura = event.target.value;
+      setUnMisura(updatedUnMisura);
+    };
+
+    const handlePrezzo1Change = (event) => {
+      const updatedPrezzo1 = event.target.value;
+      setPrezzo1(updatedPrezzo1);
+    };
+
+    const handlePrezzo2Change = (event) => {
+      const updatedPrezzo2Prezzo2 = event.target.value;
+      setPrezzo2(updatedPrezzo2Prezzo2);
+    };
+
+    const handlePrezzo3Change = (event) => {
+      const updatedPrezzo3 = event.target.value;
+      setPrezzo3(updatedPrezzo3);
+    };
+
+    const handlePrezzo4Change = (event) => {
+      const updatedPrezzo4 = event.target.value;
+      setPrezzo4(updatedPrezzo4);
+    };
+
+    const handlePrezzo5Change = (event) => {
+      const updated5 = event.target.value;
+      setPrezzo5(updated5);
+    };
 
     const handleSicurezzaChange = (event) => {
       const updatedSicurezza = event.target.value;
       setSicurezza(updatedSicurezza);
-      updateDataItem({ ...dataItem, IncSIC: updatedSicurezza });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Sicurezza`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const handleManodoperaChange = (event) => {
       const updatedManodopera = event.target.value;
       setManodopera(updatedManodopera);
-      updateDataItem({ ...dataItem, IncMDO: updatedManodopera });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Manodopera`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const handleAttrezzatureChange = (event) => {
       const updatedAttrezzature = event.target.value;
       setAttrezzature(updatedAttrezzature);
-      updateDataItem({ ...dataItem, IncATTR: updatedAttrezzature });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Attrezzature`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const handleMaterialiChange = (event) => {
       const updatedMateriali = event.target.value;
       setMateriali(updatedMateriali);
-      updateDataItem({ ...dataItem, IncMAT: updatedMateriali });
-
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      setToLog({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stato modificato Incidenza Materiali`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
     };
 
     const p1Changer = (newValue) => {
-      p1 = newValue
-      setUsaAnalisi(true);
+/*       p1 = newValue */
+      /* setUsaAnalisi(true); */
       updateDataItem({ ...dataItem, Prezzo1: newValue });
     }
 
-    const p1Restore = () => {
+    /* const p1Restore = () => {
       setUsaAnalisi(false)
-    }
+    } */
 
-    const stateChanger = () => {
+    /* const stateChanger = () => {
       setUsaAnalisi(true)
-    }
+    } */
 
     const updateLavorazioni = (newLavorazioni) => {
       const updatedItem = { ...dataItem, analisi: newLavorazioni };
@@ -207,10 +194,16 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       <>
         <section className={tabPropOpen ? "tabOpen" : "tabClosed"}>
           <div>
-            <button>Proprietà</button>
-            <button onClick={openAnalisi}>Analisi</button>
+            <button
+            title='proprietà'
+            className='k-button k-button-md k-button-solid k-button-solid-primary m-top'
+            >Proprietà</button>
+            <button 
+            title='Analisi'
+            className='k-button k-button-md k-button-solid k-button-solid-secondary m-top'
+            onClick={openAnalisi}>Analisi</button>
           </div>
-          <p>
+          {/* <p>
             <strong>Tariffa:</strong> {dataItem.Tariffa}
           </p>
           <p>
@@ -242,60 +235,181 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
           </p>
           <p>
             <strong>Prezzo5:</strong> {dataItem.Prezzo5}
-          </p>
-          <div>
-            <label htmlFor='sic'>
-              <strong>Incidenza Sicurezza:</strong>
+          </p> */}
+          <div className='proprety-tab-sections'>
+            <div className='proprety-tab-first'>
+              <label htmlFor='tar'>
+                <strong>Tariffa:</strong>
+              </label>
+              <input
+                type="text"
+                id="tar"
+                value={tariffa}
+                onChange={handleTariffaChange}
+              />
+            </div>
+            <div className='proprety-tab-first'>
+              <label htmlFor='art'>
+                <strong>Articolo:</strong>
+              </label>
+              <input
+                type="text"
+                id="art"
+                value={articolo}
+                onChange={handleArticoloChange}
+              />
+            </div>
+            <div className='proprety-tab-first'>
+              <label htmlFor='unMi'>
+                <strong>UnMisura:</strong>
+              </label>
+              <input
+                type="text"
+                id="unMi"
+                value={unMisura}
+                onChange={handleUnMisuraChange}
+              />
+            </div>
+          </div>
+          <div className='proprety-tab-long'>
+            <label htmlFor='dRid'>
+              <strong>Descrizione Ridotta:</strong>
             </label>
-            <input
-              type="number"
-              id="sic"
-              value={sicurezza}
-              onChange={handleSicurezzaChange}
+            <textarea
+              type="text"
+              id="dRid"
+              value={desRidotta}
+              onChange={handleDesRidottaChange}
             />
           </div>
-          <div>
-            <label htmlFor='man'>
-              <strong htmlFor='man'>Incidenza Manodopera:</strong>
+          <div className='proprety-tab-long'>
+            <label htmlFor='dEst'>
+              <strong>Descrizione Estesa:</strong>
             </label>
-            <input
-              type="number"
-              id="man"
-              value={manodopera}
-              onChange={handleManodoperaChange}
+            <textarea
+              type="text"
+              id="dEst"
+              value={desEstesa}
+              onChange={handleDesEstesaChange}
             />
           </div>
-          <div>
-            <label htmlFor='mat'>
-              <strong>Incidenza Materiali:</strong>
-            </label>
-            <input
-              type="number"
-              id="mat"
-              value={materiali}
-              onChange={handleMaterialiChange}
-            />
+          <div className='proprety-tab-sections'>
+            <div className="proprety-tab-first">
+              <label htmlFor='pr1'>
+                <strong>Prezzo 1:</strong>
+              </label>
+              <input
+                type="number"
+                id="pr1"
+                value={prezzo1}
+                onChange={handlePrezzo1Change}
+              />
+            </div>
+            <div className="proprety-tab-first">
+              <label htmlFor='pr2'>
+                <strong>Prezzo 2:</strong>
+              </label>
+              <input
+                type="number"
+                id="pr2"
+                value={prezzo2}
+                onChange={handlePrezzo2Change}
+              />
+            </div>
+            <div className="proprety-tab-first">
+              <label htmlFor='pr3'>
+                <strong>Prezzo 3:</strong>
+              </label>
+              <input
+                type="number"
+                id="pr3"
+                value={prezzo3}
+                onChange={handlePrezzo3Change}
+              />
+            </div>
+            <div className="proprety-tab-first">
+              <label htmlFor='pr4'>
+                <strong>Prezzo 4:</strong>
+              </label>
+              <input
+                type="number"
+                id="pr4"
+                value={prezzo4}
+                onChange={handlePrezzo4Change}
+              />
+            </div>
+            <div className="proprety-tab-first">
+              <label htmlFor='pr5'>
+                <strong>Prezzo 5:</strong>
+              </label>
+              <input
+                type="number"
+                id="pr5"
+                value={prezzo5}
+                onChange={handlePrezzo5Change}
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor='attr'>
-              <strong>Incidenza Attrezzature:</strong>
-            </label>
-            <input
-              type="number"
-              id="attr"
-              value={attrezzature}
-              onChange={handleAttrezzatureChange}
-            />
+          <div className='proprety-tab-sections'>
+            <div className='proprety-tab-first'>
+              <label htmlFor='sic'>
+                <strong>Incidenza Sicurezza:</strong>
+              </label>
+              <input
+                type="number"
+                id="sic"
+                value={sicurezza}
+                onChange={handleSicurezzaChange}
+              />
+            </div>
+            <div className='proprety-tab-first'>
+              <label htmlFor='man'>
+                <strong htmlFor='man'>Incidenza Manodopera:</strong>
+              </label>
+              <input
+                type="number"
+                id="man"
+                value={manodopera}
+                onChange={handleManodoperaChange}
+              />
+            </div>
+            <div className='proprety-tab-first'>
+              <label htmlFor='mat'>
+                <strong>Incidenza Materiali:</strong>
+              </label>
+              <input
+                type="number"
+                id="mat"
+                value={materiali}
+                onChange={handleMaterialiChange}
+              />
+            </div>
+            <div className='proprety-tab-first'>
+              <label htmlFor='attr'>
+                <strong>Incidenza Attrezzature:</strong>
+              </label>
+              <input
+                type="number"
+                id="attr"
+                value={attrezzature}
+                onChange={handleAttrezzatureChange}
+              />
+            </div>
           </div>
-          <div className="input-container">
+          {/* <div className="input-container closed">
             <button onClick={p1Restore}>Usa Listino</button>
             <button onClick={stateChanger}>Usa Analisi</button>
-          </div>
+          </div> */}
         </section>
         <section className={tabAnalisiOpen ? "tabOpen" : "tabClosed"}>
           <div>
-            <button onClick={openProp}>Proprietà</button>
-            <button>Analisi</button>
+            <button 
+            title='Proprietà'
+            className='k-button k-button-md k-button-solid k-button-solid-secondary m-top'
+            onClick={openProp}>Proprietà</button>
+            <button
+            className='k-button k-button-md k-button-solid k-button-solid-primary m-top'
+            >Analisi</button>
           </div>
           <AutoCompleteSelect selectedRow={selectedRow} nomeUtente={nomeUtente} addLogAnalisi={addLogAnalisi} p1Changer={p1Changer} updateDetailComponent={updateLavorazioni} detProps={dataItem} />
         </section>
@@ -638,7 +752,11 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       setData(newData);
     }
   };
+  let larghezza = window.innerWidth;
+  let altezza = window.innerHeight-40;
 
+  console.log(larghezza)
+  let larghezzaEffettiva = larghezza-10;
   const grid2 = (
     <>
       <Grid
@@ -646,7 +764,8 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
         groupable={false}
         reorderable={true}
         style={{
-          height: "800px",
+          width: `${larghezzaEffettiva}px`,
+          height: `${altezza}px`,
         }}
         resizable={true}
         data={handleGroupState(process(data.map((item) => ({
@@ -679,10 +798,10 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
           setSort(e.sort);
         }}
       >
-        <Column field="Tariffa" title="Tariffa" editable={false} width="150wpx" minResizableWidth={110} />
+        <Column field="Tariffa" title="Tariffa" width="150wpx" minResizableWidth={110} />
         <Column field="DesRidotta" title="Descrizione" width="1000px" minResizableWidth={600} />
         <Column field="UnMisura" title="Unità Misura" width="200px" minResizableWidth={50} />
-        <Column field="Prezzo1" title="Prezzo" width="200px" minResizableWidth={80} />
+        <Column field="Prezzo1" title="Prezzo" width="100px" minResizableWidth={80} />
         <GridToolbar>
           <div onClick={closeEdit}>
             <button
@@ -790,7 +909,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
           console.log('toLog:', toLog);    // Log the toLog value
 
           const docSnap = await getDoc(logRef);
-          
+
           if (!docSnap.exists()) {
             console.log('Documento non esiste, creazione in corso...');
             await setDoc(logRef, { log: [toLog] });
@@ -808,7 +927,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
       sendLogToFirestore();
     }
   }, [toLog]);
-  
+
 
   return (
     <div className='chiodo'>
