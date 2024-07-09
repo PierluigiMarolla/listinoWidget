@@ -13,7 +13,7 @@ const Log = ({ openLog, logValue }) => {
 
     const [data, setData] = React.useState([]);
 
-    React.useEffect(() => {
+
     const fetchData = async () => {
       try {
         const docRef = doc(db, 'listinoLog', 'CRRef7VlF5hnW2Xy0Fq'); // ID del documento
@@ -31,7 +31,7 @@ const Log = ({ openLog, logValue }) => {
     };
 
     fetchData();
-  }, [logValue]);
+
 
     return (
         <div className='log-background'>
