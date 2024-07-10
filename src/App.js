@@ -24,27 +24,27 @@ const App = () => {
     setNomeUtente(`utente-${Math.floor(Math.random() * 100)}`)
   }, [])
 
-  const fetchData = async () => {
-    try {
-      const docRef = doc(db, 'listinoLog', 'CRRef7VlF5hnW2Xy0Fq'); // ID del documento
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-        console.log(dataLog)
-        
-        setDataLog(docSnap.data());
-      } else {
-        console.log("No such document!");
-      }
-    } catch (error) {
-      console.error("Error getting document: ", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const docRef = doc(db, 'listinoLog', 'CRRef7VlF5hnW2Xy0Fq'); // ID del documento
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+          console.log(dataLog);
+          
+          setDataLog(docSnap.data());
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error getting document: ", error);
+      }
+    };
+
     fetchData();
-  }, [fetchData, logOpen]);
+  }, [logOpen, dataLog]);
   
 
 
