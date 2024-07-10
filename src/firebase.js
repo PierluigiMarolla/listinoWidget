@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, updateDoc, doc, arrayUnion } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBJ735rQPOTLGifwyLy69C__yxv_5GcPNg",
-    authDomain: "ayccwidget.firebaseapp.com",
-    projectId: "ayccwidget",
-    storageBucket: "ayccwidget.appspot.com",
-    messagingSenderId: "42312624927",
-    appId: "1:42312624927:web:fa5093c105d589f470de2a"
-  };
+  apiKey: "AIzaSyAFk4wL2B4qrK25Ecmhn8H5-fUNB7Gie-A",
+  authDomain: "testlog-52fb9.firebaseapp.com",
+  projectId: "testlog-52fb9",
+  storageBucket: "testlog-52fb9.appspot.com",
+  messagingSenderId: "506706863788",
+  appId: "1:506706863788:web:7279d567c4dcf73de8a109"
+};
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);

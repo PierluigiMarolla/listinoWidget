@@ -83,6 +83,7 @@ body {
 
 .input-container {
   width: 500px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,20 +109,28 @@ body {
 }
 
 .log-background {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.386);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Colore nero con 50% di opacità */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000; /* Assicurarsi che sia sopra tutti gli altri elementi */
 }
 
 .log-container {
-  width: 600px;
-  height: 800px;
-  background-color: white;
-  border-radius: 20px;
+  background: #fff;
   padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1010; /* Deve essere sopra lo sfondo */
 }
 
 .log-title-section {
@@ -152,8 +161,22 @@ body {
   border: 1px solid blue;
 }
 
+.proprety-tab-first select{
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
+
 .proprety-tab-first label{
   font-size: 16px;
+}
+
+
+.proprety-tab-first p{
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .proprety-tab-long textarea{
@@ -179,3 +202,67 @@ body {
 .m-top{
   margin-top: 20px;
 }
+
+
+.analisi-p{
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+.analisi-select{
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
+
+.analisi-results {
+  display: flex;
+  justify-content: space-between;
+}
+
+.analisi-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  height: 100px;
+  margin: 0;
+  color: #ff6358;
+}
+
+.analisi-sum {
+  height: 100px;
+}
+
+.analisi-sum p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.analisi-sum input {
+  margin: 10px;
+  padding: 5px;
+  width: 50px;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
+
+.analisi-total {
+  display: flex;
+  justify-content: center;
+}
+
+.analisi-sum-right {
+  text-align: end;
+} 
+
+.green span{
+  color: green;
+}
+
+.analisi-button{
+  border-radius: 30px;
+}
+

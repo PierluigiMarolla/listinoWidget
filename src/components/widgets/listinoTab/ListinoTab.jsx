@@ -825,11 +825,11 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
               Export PDF
             </button> */}
           </div>
-          <div>
+          <div className='proprety-tab-first'>
             <p>Cerca:</p>
             <Input onChange={filterData} />
           </div>
-          <div>
+          <div className='proprety-tab-first'>
             <p>Raggruppamento:</p>
             <select onChange={handleGroupChange} defaultValue="IDSupCap.DesSintetica">
               <option value="none">Standard</option>
@@ -847,35 +847,35 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
         onClose={handleCloseMenu}
       >
         <MenuItem
-          text="Add row"
+          text="Aggiungi Voce"
           data={{
             action: "addRow",
           }}
           icon="plus"
         />
         <MenuItem
-          text="Edit row"
+          text="Modifica Voce"
           data={{
             action: "editRow",
           }}
           icon="edit"
         />
         <MenuItem
-          text="Delete row"
+          text="Cancella Voce"
           data={{
             action: "deleteRow",
           }}
           icon="delete"
         />
         <MenuItem
-          text="Move row up"
+          text="Porta Voce Su"
           data={{
             action: "moveUp",
           }}
           icon="arrow-up"
         />
         <MenuItem
-          text="Move row down"
+          text="Porta Voce Giù"
           data={{
             action: "moveDown",
           }}
@@ -950,6 +950,7 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
           onClick={handleClickSet}
         >IMPOSTAZIONI</button> */}
         <button
+        className='k-button k-button-md k-button-solid k-button-solid-info'
           title='Log'
           onClick={handleClickLog}
         >LOG</button>

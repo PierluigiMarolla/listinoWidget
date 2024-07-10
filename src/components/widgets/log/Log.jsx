@@ -1,36 +1,30 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { Grid, GridColumn } from "@progress/kendo-react-grid";
-import { doc, getDoc } from "firebase/firestore"; 
-import { db } from './../../../firebase';
+import { Grid, GridColumn as Column } from "@progress/kendo-react-grid";
+import { orderBy } from "@progress/kendo-data-query";
 
 
-const Log = ({ openLog, logValue }) => {
+const initialSort = [
+    {
+        field: "Tariffa",
+        dir: "asc",
+    },
+];
+
+
+const Log = ({ openLog, dataLog }) => {
 
     const handleXClick = () => {
         openLog(false)
     }
 
-    const [data, setData] = React.useState([]);
+    const [data, setData] = React.useState(dataLog ? dataLog.log : []);
+    const [sort, setSort] = React.useState(initialSort);
+    
+    React.useEffect(()=>{
+        setData(dataLog ? dataLog.log : [])
+    },[dataLog])
 
-
-    const fetchData = async () => {
-      try {
-        const docRef = doc(db, 'listinoLog', 'CRRef7VlF5hnW2Xy0Fq'); // ID del documento
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          console.log("Document data:", docSnap.data());
-          setData(docSnap.data());
-        } else {
-          console.log("No such document!");
-        }
-      } catch (error) {
-        console.error("Error getting document: ", error);
-      }
-    };
-
-    fetchData();
 
 
     return (
@@ -39,24 +33,29 @@ const Log = ({ openLog, logValue }) => {
                 <div className='log-title-section'>
                     <h2><strong>LOG DELLE MODIFICHE</strong></h2>
                     <button
-                    title='Close Log'
-                    onClick={handleXClick}
-                    className='log-X-button'
+                        title='Close Log'
+                        onClick={handleXClick}
+                        className='log-X-button'
                     >
                         X
                     </button>
                 </div>
-               
+
                 <Grid
                     style={{
                         height: "400px",
                     }}
-                    data={data.log}
+                    data={orderBy(data,sort)}
+                    sortable={true}
+                    sort={sort}
+                    onSortChange={(e) => {
+                        setSort(e.sort);
+                    }}
                 >
-                    <GridColumn field="Tariffa" title="Tariffa" width="120px" />
-                    <GridColumn field="Modifica" title="Modifica" width="300x" />
-                    <GridColumn field="Utente" title="Utente" />
-                    <GridColumn field="Orario" title="Orario" />
+                    <Column field="Tariffa" title="Tariffa" width="120px" />
+                    <Column field="Modifica" title="Modifica" width="300x" />
+                    <Column field="Utente" title="Utente" />
+                    <Column field="Orario" title="Orario" />
                 </Grid>
             </div>
         </div>

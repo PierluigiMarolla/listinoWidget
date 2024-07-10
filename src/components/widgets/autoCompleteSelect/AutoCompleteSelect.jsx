@@ -112,10 +112,11 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     { nomeLavorazione: "LavorazioneXX", tariffa: 50, unita: "a corpo", tipo: "MDO", tempoQuantita: 0, costoUn: 423.45 }
   ]); */
 
-  
+
   const [source, setSource] = React.useState([
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.005.a",
       Articolo: "1.5.5.a",
       DesRidotta: "Regione Abruzzo - Operaio comune o 1° livello",
@@ -170,6 +171,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.005.b",
       Articolo: "1.5.5.b",
       DesRidotta: "Regione Abruzzo - Operaio qualificato o 2° livello",
@@ -224,6 +226,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.005.c",
       Articolo: "1.5.5.c",
       DesRidotta: "Regione Abruzzo - Operaio specializzato o 3° livello",
@@ -278,6 +281,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.005.d",
       Articolo: "1.5.5.d",
       DesRidotta: "Operaio IV livello ( caposquadra)",
@@ -332,6 +336,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.005.x",
       Articolo: "1.5.5.x",
       DesRidotta: "Saldatore elettrofusione",
@@ -386,6 +391,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.005.y",
       Articolo: "1.5.5.y",
       DesRidotta: "Formatore per la sicurezza",
@@ -440,6 +446,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.006.a",
       Articolo: "1.5.6.a",
       DesRidotta: "Tecnico per rilevamento perforazioni",
@@ -494,6 +501,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.006.b",
       Articolo: "1.5.6.b",
       DesRidotta: "Operaio IV livello ( caposquadra) - In Galleria",
@@ -548,6 +556,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.006.c",
       Articolo: "1.5.6.c",
       DesRidotta: "Regione Abruzzo - Operaio specializzato o 3° livello - In Galleria",
@@ -602,6 +611,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.006.d",
       Articolo: "1.5.6.d",
       DesRidotta: "Regione Abruzzo - Operaio qualificato o 2° livello - In Galleria",
@@ -656,6 +666,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.006.e",
       Articolo: "1.5.6.e",
       DesRidotta: "Regione Abruzzo - Operaio comune o 1° livello - In Galleria",
@@ -710,6 +721,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.008.a",
       Articolo: "1.5.8.a",
       DesRidotta: "Operaio subacqueo comune o 1° livello",
@@ -764,6 +776,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.008.c",
       Articolo: "1.5.8.c",
       DesRidotta: "Operaio subspecializzato o 3° livello",
@@ -818,6 +831,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.010.b",
       Articolo: "1.5.10.b",
       DesRidotta: "Regione Abruzzo – Operaio Metalmeccanico livello D2",
@@ -872,6 +886,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.010.c",
       Articolo: "1.5.10.c",
       DesRidotta: "Regione Abruzzo – Operaio Metalmeccanico livello C2",
@@ -926,6 +941,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.010.d",
       Articolo: "1.5.10.d",
       DesRidotta: "Regione Abruzzo – Operaio Metalmeccanico livello C3",
@@ -980,6 +996,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.015.a",
       Articolo: "1.5.15.a",
       DesRidotta: "Regione Abruzzo – Operai agricoli e florovivaisti - Operaio Comune",
@@ -1034,6 +1051,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.015.b",
       Articolo: "1.5.15.b",
       DesRidotta: "Regione Abruzzo – Operai agricoli e florovivaisti - Operaio Qualificato",
@@ -1088,6 +1106,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.015.c",
       Articolo: "1.5.15.c",
       DesRidotta: "Regione Abruzzo – Operai agricoli e florovivaisti - Operaio Qualificato Super",
@@ -1142,6 +1161,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.015.d",
       Articolo: "1.5.15.d",
       DesRidotta: "Regione Abruzzo - Operai agricoli e florovivaisti - Operaio Specializzato",
@@ -1196,6 +1216,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "01.005.015.e",
       Articolo: "1.5.15.e",
       DesRidotta: "Regione Abruzzo - Operai agricoli e florovivaisti - Operaio Specializzato Super",
@@ -1250,6 +1271,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.a",
       Articolo: "10.5.5.a",
       DesRidotta: "Nolo di un autocarro ribaltabile da 6000 kg",
@@ -1304,6 +1326,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.b",
       Articolo: "10.5.5.b",
       DesRidotta: "Nolo di un autocarro leggero da 1000 kg di portata",
@@ -1358,6 +1381,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.c",
       Articolo: "10.5.5.c",
       DesRidotta: "Nolo di un autocarro articolato con carrello per trasporto mezzi movimento terra",
@@ -1412,6 +1436,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.d",
       Articolo: "10.5.5.d",
       DesRidotta: "Nolo di Autoarticolato dotato di semirimorchio per il trasporto di mezzi per il movimento terra",
@@ -1466,6 +1491,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.e",
       Articolo: "10.5.5.e",
       DesRidotta: "Nolo di Autoarticolato dotato di semirimorchio per trasporto eccezionale",
@@ -1520,6 +1546,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.f",
       Articolo: "10.5.5.f",
       DesRidotta: "Nolo autocarro od Autocisterna della portat di 190 q.li",
@@ -1574,6 +1601,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.g",
       Articolo: "10.5.5.g",
       DesRidotta: "Autocarro ribaltabile da 7 m³",
@@ -1628,6 +1656,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.h",
       Articolo: "10.5.5.h",
       DesRidotta: "Autocarro ribaltabile da 11 m³",
@@ -1682,6 +1711,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.i",
       Articolo: "10.5.5.i",
       DesRidotta: "Autocarro ribaltabile da 15 m³",
@@ -1736,6 +1766,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.l",
       Articolo: "10.5.5.l",
       DesRidotta: "Autocarro per il posizionamento di supporti delle barriere stradali",
@@ -1790,6 +1821,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.m",
       Articolo: "10.5.5.m",
       DesRidotta: "Autocarro con gru da 8500 kg",
@@ -1844,6 +1876,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.n",
       Articolo: "10.5.5.n",
       DesRidotta: "Autocarro con gru da 15000 kg",
@@ -1898,6 +1931,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.o",
       Articolo: "10.5.5.o",
       DesRidotta: "Autocarro con gru da 20000 kg",
@@ -1952,6 +1986,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.p",
       Articolo: "10.5.5.p",
       DesRidotta: "Autocarro con gruetta 3500 kg",
@@ -2006,6 +2041,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.q",
       Articolo: "10.5.5.q",
       DesRidotta: "Autobotte della portata di 8000 l",
@@ -2060,6 +2096,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.r",
       Articolo: "10.5.5.r",
       DesRidotta: "Autobotte di supporto per sondaggi e trivellazioni",
@@ -2114,6 +2151,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.s",
       Articolo: "10.5.5.s",
       DesRidotta: "Autoespurgo con sistema idrodinamico",
@@ -2168,6 +2206,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.005.t",
       Articolo: "10.5.5.t",
       DesRidotta: "Nolo autobotte con acqua",
@@ -2222,6 +2261,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.030.b",
       Articolo: "10.5.30.b",
       DesRidotta: "DUMPER DA MC. 6 IN GALLERIA",
@@ -2276,6 +2316,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.030.c",
       Articolo: "10.5.30.c",
       DesRidotta: "Donzer cingolato con ripper hp 200",
@@ -2330,6 +2371,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.030.d",
       Articolo: "10.5.30.d",
       DesRidotta: "Dumper della portata di 23 t",
@@ -2384,6 +2426,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.030.e",
       Articolo: "10.5.30.e",
       DesRidotta: "Donzer cingolato con ripper hp 400",
@@ -2438,6 +2481,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.032.a",
       Articolo: "10.5.32.a",
       DesRidotta: "Bobcat",
@@ -2492,6 +2536,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.032.b",
       Articolo: "10.5.32.b",
       DesRidotta: "Escavatore bobcat",
@@ -2546,6 +2591,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.035.a",
       Articolo: "10.5.35.a",
       DesRidotta: "Pala caricatrice da 135 hp e benna da 1.8 mc",
@@ -2600,6 +2646,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.040.c",
       Articolo: "10.5.40.c",
       DesRidotta: "Pala caricatrice cingolata da 110 hp e benna da 1.5 m³",
@@ -2654,6 +2701,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.040.e",
       Articolo: "10.5.40.e",
       DesRidotta: "Pala caricatrice cingolata da 210 hp e benna da 2.8 m³",
@@ -2708,6 +2756,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.045.a",
       Articolo: "10.5.45.a",
       DesRidotta: "Terna senza martello DA 90 HP",
@@ -2762,6 +2811,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.050.a",
       Articolo: "10.5.50.a",
       DesRidotta: "Escavatore idraulico cingolato da 12000 kg",
@@ -2816,6 +2866,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.050.b",
       Articolo: "10.5.50.b",
       DesRidotta: "Escavatore idraulico cingolato da 15000 kg",
@@ -2870,6 +2921,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.050.c",
       Articolo: "10.5.50.c",
       DesRidotta: "Escavatore idraulico cingolato da 17000 kg e benna da 1,00 m³",
@@ -2924,6 +2976,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.050.d",
       Articolo: "10.5.50.d",
       DesRidotta: "Escavatore idraulico cingolato da 25000 kg",
@@ -2978,6 +3031,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.050.e",
       Articolo: "10.5.50.e",
       DesRidotta: "Escavatore idraulico cingolato da 30000 kg",
@@ -3032,6 +3086,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.a",
       Articolo: "10.5.55.a",
       DesRidotta: "Escavatore idraulico da 17000 kg con martello da 500 kg",
@@ -3086,6 +3141,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.b",
       Articolo: "10.5.55.b",
       DesRidotta: "ESCAVATORE HP 270 PER IMPIEGO IN GALLERIA",
@@ -3140,6 +3196,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.c",
       Articolo: "10.5.55.c",
       DesRidotta: "Escavatore idraulico da 30000 kg con martello da 1500 kg",
@@ -3194,6 +3251,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.e",
       Articolo: "10.5.55.e",
       DesRidotta: "Escavatore da 250hp con martellone oleodinamico da 800 Kg o pinza",
@@ -3248,6 +3306,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.f",
       Articolo: "10.5.55.f",
       DesRidotta: "Escavatore con benna mordente da cm 60",
@@ -3302,6 +3361,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.g",
       Articolo: "10.5.55.g",
       DesRidotta: "Escavatore con benna mordente da cm 80",
@@ -3356,6 +3416,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.h",
       Articolo: "10.5.55.h",
       DesRidotta: "Escavatore con benna mordente da cm 100",
@@ -3410,6 +3471,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.i",
       Articolo: "10.5.55.i",
       DesRidotta: "Escavatore con benna mordente da cm 120",
@@ -3464,6 +3526,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.l",
       Articolo: "10.5.55.l",
       DesRidotta: "Escavatore con benna mordente da cm 50",
@@ -3518,6 +3581,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.055.m",
       Articolo: "10.5.55.m",
       DesRidotta: "Escavatore con battipalo",
@@ -3572,6 +3636,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.075.a",
       Articolo: "10.5.75.a",
       DesRidotta: "Trattore da 80 hp per lavori di opere a verde completo di ... pugliatore Fresa per terreni, Aratro da max 50 cm etc etc)",
@@ -3626,6 +3691,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.075.b",
       Articolo: "10.5.75.b",
       DesRidotta: "Trattore di piccole dimensioni max 20 hp per lavori di op ...  per terreni, piccolo carotiere, presa di potenza etc etc)",
@@ -3680,6 +3746,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.075.c",
       Articolo: "10.5.75.c",
       DesRidotta: "decespugliatore idraulico applicato a braccio operatore montato sia su trattore che su qualsiasi altro mezzo.",
@@ -3734,6 +3801,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.075.d",
       Articolo: "10.5.75.d",
       DesRidotta: "Decespugliatore a spalla compresi consumi e carburanti",
@@ -3788,6 +3856,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.085.a",
       Articolo: "10.5.85.a",
       DesRidotta: "Martelli demolitori di potenza 1200 l/min e peso 10 kg",
@@ -3842,6 +3911,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.085.b",
       Articolo: "10.5.85.b",
       DesRidotta: "Martelli demolitori di potenza 1200 l/min e peso 20 kg",
@@ -3896,6 +3966,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.085.c",
       Articolo: "10.5.85.c",
       DesRidotta: "Martelli demolitore di potenza 1700 l/min e peso 27 kg",
@@ -3950,6 +4021,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.085.d",
       Articolo: "10.5.85.d",
       DesRidotta: "MARTELLO PERFORATORE PER LAVORI IN GALLERIA",
@@ -4004,6 +4076,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.085.e",
       Articolo: "10.5.85.e",
       DesRidotta: "ATTREZZATURA PER PERFORAZIONI IN GALLERIA",
@@ -4058,6 +4131,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.090.a",
       Articolo: "10.5.90.a",
       DesRidotta: "Compressori ad aria di potenza 5000 l/min",
@@ -4112,6 +4186,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.090.b",
       Articolo: "10.5.90.b",
       DesRidotta: "Compressori ad aria di potenza 7500 l/min",
@@ -4166,6 +4241,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.090.d",
       Articolo: "10.5.90.d",
       DesRidotta: "Compressori ad aria di potenza 21000 l/min",
@@ -4220,6 +4296,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.096.a",
       Articolo: "10.5.96.a",
       DesRidotta: "Gruppo elettrogeno potenza 5 kw",
@@ -4274,6 +4351,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.096.d",
       Articolo: "10.5.96.d",
       DesRidotta: "Gruppo elettrogeno potenza 50 kw",
@@ -4328,6 +4406,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.100.a",
       Articolo: "10.5.100.a",
       DesRidotta: "Motopompa hp 4 bocca 2&quot;",
@@ -4382,6 +4461,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.005.100.c",
       Articolo: "10.5.100.c",
       DesRidotta: "Compressori d&apos;aria con motore elettrico da l 150",
@@ -4436,6 +4516,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.a",
       Articolo: "10.10.7.a",
       DesRidotta: "Martello demolitore elettrico",
@@ -4490,6 +4571,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.b",
       Articolo: "10.10.7.b",
       DesRidotta: "Martello demolitore perforatore combinato elettrico",
@@ -4544,6 +4626,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.c",
       Articolo: "10.10.7.c",
       DesRidotta: "Martello demolitore",
@@ -4598,6 +4681,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.d",
       Articolo: "10.10.7.d",
       DesRidotta: "Trapano a basamento a rotopercursione testa diamandata da mm 63",
@@ -4652,6 +4736,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.e",
       Articolo: "10.10.7.e",
       DesRidotta: "Trapano a basamento a rotopercursione testa diamandata da mm 80",
@@ -4706,6 +4791,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.f",
       Articolo: "10.10.7.f",
       DesRidotta: "Trapano a basamento a rotopercursione testa diamandata da mm 114",
@@ -4760,6 +4846,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.g",
       Articolo: "10.10.7.g",
       DesRidotta: "Trapano a basamento a rotopercursione testa diamandata da mm 136",
@@ -4814,6 +4901,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.h",
       Articolo: "10.10.7.h",
       DesRidotta: "Martello demolitore di potenza 1200 l/min e peso 20 kg",
@@ -4868,6 +4956,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.007.i",
       Articolo: "10.10.7.i",
       DesRidotta: "Martello perforatore",
@@ -4922,6 +5011,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.008.a",
       Articolo: "10.10.8.a",
       DesRidotta: "Fresa con testa in acciaio per legno",
@@ -4976,6 +5066,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.010.a",
       Articolo: "10.10.10.a",
       DesRidotta: "Perforatrice a rotopercursione da max mm 130 di diametro",
@@ -5030,6 +5121,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.010.b",
       Articolo: "10.10.10.b",
       DesRidotta: "Perforatrice a rotopercursione per micropali da mm 131 a 236",
@@ -5084,6 +5176,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.010.c",
       Articolo: "10.10.10.c",
       DesRidotta: "Perforatrice a rotopercursione per micropali da mm 236 a 312",
@@ -5138,6 +5231,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.010.d",
       Articolo: "10.10.10.d",
       DesRidotta: "CARROPONTE JUMBO X PERFORAZIONE IN GALLERIA",
@@ -5192,6 +5286,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.010.e",
       Articolo: "10.10.10.e",
       DesRidotta: "WAGON DRILL IDRAULICO DA 200HP",
@@ -5246,6 +5341,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.020.a",
       Articolo: "10.10.20.a",
       DesRidotta: "Trivella di potenza 1600 l/min",
@@ -5300,6 +5396,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.025.d",
       Articolo: "10.10.25.d",
       DesRidotta: "Sonda cingolata da 5000 kg con braccio",
@@ -5354,6 +5451,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.025.l",
       Articolo: "10.10.25.l",
       DesRidotta: "Attrezzatura per carr o perforazione da mm 85",
@@ -5408,6 +5506,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.025.p",
       Articolo: "10.10.25.p",
       DesRidotta: "Penetrometro statico a piezocono",
@@ -5462,6 +5561,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.025.w",
       Articolo: "10.10.25.w",
       DesRidotta: "Doppio carotiere",
@@ -5516,6 +5616,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.030.a",
       Articolo: "10.10.30.a",
       DesRidotta: "Sonda gommata da 12000 kg con braccio",
@@ -5570,6 +5671,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.030.b",
       Articolo: "10.10.30.b",
       DesRidotta: "Sonda gommata da 18000 kg con braccio",
@@ -5624,6 +5726,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.030.c",
       Articolo: "10.10.30.c",
       DesRidotta: "Rotary idraulico",
@@ -5678,6 +5781,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.040.a",
       Articolo: "10.10.40.a",
       DesRidotta: "Pompa per iniezione ad aria compressa",
@@ -5732,6 +5836,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.050.a",
       Articolo: "10.10.50.a",
       DesRidotta: "Noleggio attrezzatura sismica a rifrazione ed elaborazione con tecnica tonografica",
@@ -5786,6 +5891,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.010.050.b",
       Articolo: "10.10.50.b",
       DesRidotta: "Noleggio attrezzatura - Microtremori",
@@ -5840,6 +5946,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.005.a",
       Articolo: "10.15.5.a",
       DesRidotta: "Betoniera di capacità 500 l",
@@ -5894,6 +6001,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.005.b",
       Articolo: "10.15.5.b",
       DesRidotta: "AUTOBETONIERA DA MC 6,5 CON NASTRO TRASPORTATORE PER GALLERIA",
@@ -5948,6 +6056,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.005.c",
       Articolo: "10.15.5.c",
       DesRidotta: "AUTOBETONIERA DA MC 8,5",
@@ -6002,6 +6111,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.005.d",
       Articolo: "10.15.5.d",
       DesRidotta: "Mescolatrice per malte",
@@ -6056,6 +6166,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.010.a",
       Articolo: "10.15.10.a",
       DesRidotta: "Pompe per calcestruzzo autocarrate, braccio 30 m",
@@ -6110,6 +6221,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.010.b",
       Articolo: "10.15.10.b",
       DesRidotta: "Pompa per conglomerati e malte rimorchiabile",
@@ -6164,6 +6276,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.010.c",
       Articolo: "10.15.10.c",
       DesRidotta: "Spruzzatrice per calcestruzzi",
@@ -6218,6 +6331,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.010.d",
       Articolo: "10.15.10.d",
       DesRidotta: "Quota pompaggio per pompe per calcestruzzo autocarrata, braccio fino a 25 m",
@@ -6272,6 +6386,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.010.e",
       Articolo: "10.15.10.e",
       DesRidotta: "Quota pompaggio per pompe per calcestruzzo autocarrata, braccio d 26 m 36 m",
@@ -6326,6 +6441,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.010.f",
       Articolo: "10.15.10.f",
       DesRidotta: "Pompe per calcestruzzo autocarrata, braccio fino a 36 m",
@@ -6380,6 +6496,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.015.015.a",
       Articolo: "10.15.15.a",
       DesRidotta: "Vibratore per calcestruzzi elettrico",
@@ -6434,6 +6551,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.005.a",
       Articolo: "10.20.5.a",
       DesRidotta: "Ponteggio con sistema a tubo giunto",
@@ -6488,6 +6606,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.005.b",
       Articolo: "10.20.5.b",
       DesRidotta: "Tubo da ponteggio",
@@ -6542,6 +6661,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.005.c",
       Articolo: "10.20.5.c",
       DesRidotta: "Giunto ortogonale per ponteggio",
@@ -6596,6 +6716,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.005.d",
       Articolo: "10.20.5.d",
       DesRidotta: "PONTEGGIO A TUBO E GIUNTO PER PUNTELLATURE O INTEGRAZIONI valutato a giunto",
@@ -6650,6 +6771,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.005.e",
       Articolo: "10.20.5.e",
       DesRidotta: "PONTEGGIO A TUBO E GIUNTO COMPLETO IN OGNI SUA PARTE valutato a giunto",
@@ -6704,6 +6826,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.005.f",
       Articolo: "10.20.5.f",
       DesRidotta: "PONTEGGIO MULTIDIREZIONALE PER PUNTELLATURE valutato a m³",
@@ -6758,6 +6881,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.012.a",
       Articolo: "10.20.12.a",
       DesRidotta: "Elementi per puntellatura pesante di manufatti sitema spinottato",
@@ -6812,6 +6936,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.012.b",
       Articolo: "10.20.12.b",
       DesRidotta: "PONTEGGIO A TELAIO PREFABBRICATO CON ATTACCO A PERNO COMPLETO IN OGNI SUA PARTE valutato a m²",
@@ -6866,6 +6991,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.012.c",
       Articolo: "10.20.12.c",
       DesRidotta: "PONTEGGIO MULTIDIREZIONALE COMPLETO IN OGNI SUA PARTE valutato a m²",
@@ -6920,6 +7046,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.015.a",
       Articolo: "10.20.15.a",
       DesRidotta: "Cavalletti in ferro",
@@ -6974,6 +7101,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.016.a",
       Articolo: "10.20.16.a",
       DesRidotta: "Modulo rete a maglia 20 x 50 mm",
@@ -7028,6 +7156,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.016.b",
       Articolo: "10.20.16.b",
       DesRidotta: "Base in cls per moduli prefabbricati, peso kg 28-35",
@@ -7082,6 +7211,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.017.a",
       Articolo: "10.20.17.a",
       DesRidotta: "Modulo pannello cieco in metallo",
@@ -7136,6 +7266,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.017.b",
       Articolo: "10.20.17.b",
       DesRidotta: "Base in cls per moduli prefabbricati, peso kg 38-40",
@@ -7190,6 +7321,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.018.a",
       Articolo: "10.20.18.a",
       DesRidotta: "Modulo pannello cieco in legno",
@@ -7244,6 +7376,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.018.b",
       Articolo: "10.20.18.b",
       DesRidotta: "Base in cls per moduli prefabbricati, peso kg 38-40",
@@ -7298,6 +7431,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.019.a",
       Articolo: "10.20.19.a",
       DesRidotta: "Modulo pannello base di colore bianco altezza 2,0 m",
@@ -7352,6 +7486,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.019.b",
       Articolo: "10.20.19.b",
       DesRidotta: "Modulo pannello base di colore bianco altezza 3,0 m",
@@ -7406,6 +7541,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.019.c",
       Articolo: "10.20.19.c",
       DesRidotta: "Base in cls per moduli prefabbricati, peso kg 48-52",
@@ -7460,6 +7596,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.a",
       Articolo: "10.20.25.a",
       DesRidotta: "Piattaforma telescopica da 25 metri e portata 450 kg",
@@ -7514,6 +7651,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.e",
       Articolo: "10.20.25.e",
       DesRidotta: "Piattaforma semovente altezza 20 m",
@@ -7568,6 +7706,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.f",
       Articolo: "10.20.25.f",
       DesRidotta: "Piattaforma semovente altezza 28 m",
@@ -7622,6 +7761,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.g",
       Articolo: "10.20.25.g",
       DesRidotta: "Piattaforma semovente altezza 18 m",
@@ -7676,6 +7816,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.h",
       Articolo: "10.20.25.h",
       DesRidotta: "Piattaforma telescopica su autocarro altezza 18 metri",
@@ -7730,6 +7871,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.j",
       Articolo: "10.20.25.j",
       DesRidotta: "Piattaforma telescopica su autocarro altezza 34 metri",
@@ -7784,6 +7926,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.l",
       Articolo: "10.20.25.l",
       DesRidotta: "Piattaforma telescopica su autocarro altezza 42 metri",
@@ -7838,6 +7981,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.m",
       Articolo: "10.20.25.m",
       DesRidotta: "Piattaforma telescopica su autocarro altezza 56 metri",
@@ -7892,6 +8036,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.025.n",
       Articolo: "10.20.25.n",
       DesRidotta: "Trabattello",
@@ -7946,6 +8091,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.030.a",
       Articolo: "10.20.30.a",
       DesRidotta: "Argano con motore da 4 hp",
@@ -8000,6 +8146,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.035.a",
       Articolo: "10.20.35.a",
       DesRidotta: "Autogru&apos; da 20000 kg",
@@ -8054,6 +8201,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.035.b",
       Articolo: "10.20.35.b",
       DesRidotta: "Autogru&apos; da 30000 kg",
@@ -8108,6 +8256,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.035.c",
       Articolo: "10.20.35.c",
       DesRidotta: "Autogru&apos; da 50000 kg",
@@ -8162,6 +8311,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.035.d",
       Articolo: "10.20.35.d",
       DesRidotta: "Autogru&apos; da 8000 kg",
@@ -8216,6 +8366,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.035.e",
       Articolo: "10.20.35.e",
       DesRidotta: "Autogru&apos; da 200 Tn",
@@ -8270,6 +8421,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.035.f",
       Articolo: "10.20.35.f",
       DesRidotta: "Autogru&apos; da 500 Tn",
@@ -8324,6 +8476,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.040.c",
       Articolo: "10.20.40.c",
       DesRidotta: "Gru a torre,sbraccio 42 m, portata 2600 kg e altezza 43 m",
@@ -8378,6 +8531,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.040.d",
       Articolo: "10.20.40.d",
       DesRidotta: "Gru a torre,sbraccio 50 m, portata 2600 kg e altezza 35 m",
@@ -8432,6 +8586,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.040.e",
       Articolo: "10.20.40.e",
       DesRidotta: "Gru a torre,sbraccio 26 m, portata 1200 kg e altezza 18 m",
@@ -8486,6 +8641,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.020.040.f",
       Articolo: "10.20.40.f",
       DesRidotta: "Gru a torre,sbraccio 40 m, portata 2200 kg e altezza 35 m",
@@ -8540,6 +8696,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.005.a",
       Articolo: "10.25.5.a",
       DesRidotta: "Vibrofinitrice di larghezza 8 m",
@@ -8594,6 +8751,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.005.b",
       Articolo: "10.25.5.b",
       DesRidotta: "Vibrofinitrice",
@@ -8648,6 +8806,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.010.a",
       Articolo: "10.25.10.a",
       DesRidotta: "Rulli compattatori da 80 hp e del peso di 6000 kg",
@@ -8702,6 +8861,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.010.b",
       Articolo: "10.25.10.b",
       DesRidotta: "Rulli compattatori da 140 hp e peso di 16000 kg",
@@ -8756,6 +8916,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.010.c",
       Articolo: "10.25.10.c",
       DesRidotta: "Rulli compattatori da 80 hp e del peso di 3000 kg",
@@ -8810,6 +8971,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.015.a",
       Articolo: "10.25.15.a",
       DesRidotta: "Piastra vibrante da 500 kg",
@@ -8864,6 +9026,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.020.a",
       Articolo: "10.25.20.a",
       DesRidotta: "Macchina spruzzatrice",
@@ -8918,6 +9081,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.020.b",
       Articolo: "10.25.20.b",
       DesRidotta: "Spruzzatore meccanico ( a caldo) per formazione di segnaletica Orizzontale",
@@ -8972,6 +9136,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.025.b",
       Articolo: "10.25.25.b",
       DesRidotta: "Fondello per fusione catramina o asfalti",
@@ -9026,6 +9191,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.025.c",
       Articolo: "10.25.25.c",
       DesRidotta: "Spanditrice per emulsione",
@@ -9080,6 +9246,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.025.d",
       Articolo: "10.25.25.d",
       DesRidotta: "Spanditrice termica (attrezzatura specifica)",
@@ -9134,6 +9301,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.030.a",
       Articolo: "10.25.30.a",
       DesRidotta: "Taglia conglomerati con motore a scoppio e disco diamantato",
@@ -9188,6 +9356,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.030.b",
       Articolo: "10.25.30.b",
       DesRidotta: "Taglia conglomerati a basamento e disco diamantato",
@@ -9242,6 +9411,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.035.a",
       Articolo: "10.25.35.a",
       DesRidotta: "Fresa per conglomerati bituminosi",
@@ -9296,6 +9466,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.040.a",
       Articolo: "10.25.40.a",
       DesRidotta: "Motoscopa",
@@ -9350,6 +9521,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.045.a",
       Articolo: "10.25.45.a",
       DesRidotta: "Nolo benna miscelatrice da 0.3 m3 circa",
@@ -9404,6 +9576,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.050.a",
       Articolo: "10.25.50.a",
       DesRidotta: "Attrezzarura da pavimentisti",
@@ -9458,6 +9631,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.050.b",
       Articolo: "10.25.50.b",
       DesRidotta: "Attrezzarura per la movimentazione",
@@ -9512,6 +9686,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.025.050.c",
       Articolo: "10.25.50.c",
       DesRidotta: "Consegna F.co cantiere dei materiali 4%",
@@ -9566,6 +9741,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.005.a",
       Articolo: "10.30.5.a",
       DesRidotta: "Pistola spruzzatrice compreso compressore d&apos;aria",
@@ -9620,6 +9796,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.005.b",
       Articolo: "10.30.5.b",
       DesRidotta: "Spruzzatrice di vernice monocomponente",
@@ -9674,6 +9851,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.006.b",
       Articolo: "10.30.6.b",
       DesRidotta: "Trapano elettrico a rotopercussione con mandrino mm 16-28",
@@ -9728,6 +9906,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.006.c",
       Articolo: "10.30.6.c",
       DesRidotta: "Trapano elettrico con mandrino mm 16-28",
@@ -9782,6 +9961,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.007.a",
       Articolo: "10.30.7.a",
       DesRidotta: "Pistola spara chiodi compreso cartuccia",
@@ -9836,6 +10016,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.009.a",
       Articolo: "10.30.9.a",
       DesRidotta: "Idropulitrice",
@@ -9890,6 +10071,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.010.a",
       Articolo: "10.30.10.a",
       DesRidotta: "Sabbiatrice con compressore d&apos;aria da 50 l/min",
@@ -9944,6 +10126,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.011.a",
       Articolo: "10.30.11.a",
       DesRidotta: "Intonacatrice",
@@ -9998,6 +10181,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.011.b",
       Articolo: "10.30.11.b",
       DesRidotta: "Intonacatrice impastatrce",
@@ -10052,6 +10236,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.012.a",
       Articolo: "10.30.12.a",
       DesRidotta: "Macchina carrellata per getti controllati di acqua a pressione",
@@ -10106,6 +10291,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.015.a",
       Articolo: "10.30.15.a",
       DesRidotta: "Motosega CMC 51 completa",
@@ -10160,6 +10346,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.016.b",
       Articolo: "10.30.16.b",
       DesRidotta: "Rotore con feltro per lucidatura acciaio inox",
@@ -10214,6 +10401,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.020.a",
       Articolo: "10.30.20.a",
       DesRidotta: "Sega circolare",
@@ -10268,6 +10456,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.020.b",
       Articolo: "10.30.20.b",
       DesRidotta: "Sega filo diamandata per taglio in conglomerati armati",
@@ -10322,6 +10511,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.021.a",
       Articolo: "10.30.21.a",
       DesRidotta: "Piegatrice per acciaio in tondini",
@@ -10376,6 +10566,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.025.b",
       Articolo: "10.30.25.b",
       DesRidotta: "Levigatrice per legno da 300-600 kW/h",
@@ -10430,6 +10621,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.025.c",
       Articolo: "10.30.25.c",
       DesRidotta: "Levigatrice per pavimentazioni in legno da 200-300 kW/h",
@@ -10484,6 +10676,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.025.e",
       Articolo: "10.30.25.e",
       DesRidotta: "Piallatrice per casseforme",
@@ -10538,6 +10731,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.030.a",
       Articolo: "10.30.30.a",
       DesRidotta: "Motosaldatrice di potenza max 300 A",
@@ -10592,6 +10786,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.035.a",
       Articolo: "10.30.35.a",
       DesRidotta: "Saldatrice elettrica alimentata a 220 V",
@@ -10646,6 +10841,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.035.b",
       Articolo: "10.30.35.b",
       DesRidotta: "Saldatrice elettrica alimentata a 380 V",
@@ -10700,6 +10896,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.035.c",
       Articolo: "10.30.35.c",
       DesRidotta: "Saldatrice elettrica alimentata a 380 V per saldature su tubi in acciaio",
@@ -10754,6 +10951,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.038.a",
       Articolo: "10.30.38.a",
       DesRidotta: "Tesatrice idraulica per trefoli",
@@ -10808,6 +11006,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.040.a",
       Articolo: "10.30.40.a",
       DesRidotta: "Tirfor DA Kg 1200",
@@ -10862,6 +11061,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.040.b",
       Articolo: "10.30.40.b",
       DesRidotta: "Tirfor di tipo pesante",
@@ -10916,6 +11116,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.040.c",
       Articolo: "10.30.40.c",
       DesRidotta: "Cricchetto per portata 10.000 kg",
@@ -10970,6 +11171,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.045.a",
       Articolo: "10.30.45.a",
       DesRidotta: "Ribattitrice vibrante a 9 rulli elettrica",
@@ -11024,6 +11226,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.055.a",
       Articolo: "10.30.55.a",
       DesRidotta: "Attrezzatura ossiacetilenica per tagli",
@@ -11078,6 +11281,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.063.a",
       Articolo: "10.30.63.a",
       DesRidotta: "Centralina digitale con pompa idraulica per martinetti",
@@ -11132,6 +11336,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.063.b",
       Articolo: "10.30.63.b",
       DesRidotta: "Martinetti idralici da 100",
@@ -11186,6 +11391,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.070.a",
       Articolo: "10.30.70.a",
       DesRidotta: "Fondello per fusione catramina o asfalti",
@@ -11240,6 +11446,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.080.a",
       Articolo: "10.30.80.a",
       DesRidotta: "Apparecchiatura per rilevazione superficiale di ordigni bellici",
@@ -11294,6 +11501,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.080.b",
       Articolo: "10.30.80.b",
       DesRidotta: "Apparecchiatura per rilevazione profonda di ordigni bellici",
@@ -11348,6 +11556,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.090.a",
       Articolo: "10.30.90.a",
       DesRidotta: "Arrotatrice, levigatrice e lucidatrice di pavimenti escluso manodopera per funzionamento",
@@ -11402,6 +11611,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.095.a",
       Articolo: "10.30.95.a",
       DesRidotta: "Fresa per apertura di tracce completa di lame",
@@ -11456,6 +11666,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.100.a",
       Articolo: "10.30.100.a",
       DesRidotta: "Sonda di video ispezione con sistema in fibra ottica di flessibilità anche adatta a piccoli diametri",
@@ -11510,6 +11721,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.110.a",
       Articolo: "10.30.110.a",
       DesRidotta: "Apparecchiatura per messa in pressione tubazioni con controllo analogico o digitale delle perdite",
@@ -11564,6 +11776,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.120.a",
       Articolo: "10.30.120.a",
       DesRidotta: "Apparecchiatura tester multifunzione per controllo continuità elettrica dei componenti e delle linee",
@@ -11618,6 +11831,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.130.a",
       Articolo: "10.30.130.a",
       DesRidotta: "bocciarda rotante/fresa meccanica",
@@ -11672,6 +11886,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.140.a",
       Articolo: "10.30.140.a",
       DesRidotta: "Bisellatrice elettrica",
@@ -11726,6 +11941,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.150.a",
       Articolo: "10.30.150.a",
       DesRidotta: "Smerigliatrice Elettrica",
@@ -11780,6 +11996,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.030.160.a",
       Articolo: "10.30.160.a",
       DesRidotta: "Spazzatrice stradale",
@@ -11834,6 +12051,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.055.010.a",
       Articolo: "10.55.10.a",
       DesRidotta: "APPERECCHIATURA PER SALDATURA DI TUBAZIONI PEad. Termosaldatrice fino a 110 mm",
@@ -11888,6 +12106,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.055.010.b",
       Articolo: "10.55.10.b",
       DesRidotta: "APPERECCHIATURA PER SALDATURA DI TUBAZIONI PEad. Termosaldatrice fino a 250 mm",
@@ -11942,6 +12161,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.055.010.c",
       Articolo: "10.55.10.c",
       DesRidotta: "APPERECCHIATURA PER SALDATURA DI TUBAZIONI PEad. Termosaldatrice fino a 650 mm",
@@ -11996,6 +12216,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.055.010.d",
       Articolo: "10.55.10.d",
       DesRidotta: "APPERECCHIATURA PER SALDATURA DI TUBAZIONI PEad. Termosaldatrice fino a 1000 mm",
@@ -12050,6 +12271,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.057.010.a",
       Articolo: "10.57.10.a",
       DesRidotta: "Polifusore con matrici fino a diametro da 50 mm",
@@ -12104,6 +12326,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.057.010.b",
       Articolo: "10.57.10.b",
       DesRidotta: "Polifusore con matrici dal diametro di 63 fino a 90 mm",
@@ -12158,6 +12381,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.005.a",
       Articolo: "10.60.05.a",
       DesRidotta: "Attrezzatura completa per demolizione subacquea",
@@ -12212,6 +12436,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.010.a",
       Articolo: "10.60.10.a",
       DesRidotta: "Barca appoggio con guida e sommozzatore, già funzionante  ... consumi, la manutenzione, l&apos;assicurazione e gli operatori.",
@@ -12266,6 +12491,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.010.b",
       Articolo: "10.60.10.b",
       DesRidotta: "Barca appoggio attrezzata con guide e palombaro, già funz ... consumi, la manutenzione, l&apos;assicurazione e gli operatori.",
@@ -12320,6 +12546,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.020.A",
       Articolo: "10.60.20.A",
       DesRidotta: "Pontone a bigo armato",
@@ -12374,6 +12601,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.020.b",
       Articolo: "10.60.20.b",
       DesRidotta: "Pontone semovente armato con gru avente portata di 60 t,  ... tenzione, assicurazione, equipaggio e operatore della gru.",
@@ -12428,6 +12656,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.020.c",
       Articolo: "10.60.20.c",
       DesRidotta: "Pontone portamassi, compresa la manutenzione e l&apos;assicurazione, ma eslcusi gli operatori.",
@@ -12482,6 +12711,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.020.d",
       Articolo: "10.60.20.d",
       DesRidotta: "Motopontone",
@@ -12536,6 +12766,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.030.a",
       Articolo: "10.60.30.a",
       DesRidotta: "Betta da rimorchiare della capacità di mc 500, già funzio ... a manutenzione e l&apos;assicurazione, ma esclusi gli operatori",
@@ -12590,6 +12821,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.040.a",
       Articolo: "10.60.40.a",
       DesRidotta: "Rimorchiatore gia funzionante in cantiere, compresi i con ... one, assicurazione, bolli, e compreso l&apos;equipaggio, HP 250",
@@ -12644,6 +12876,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.050.a",
       Articolo: "10.60.50.a",
       DesRidotta: "Autogru cingolata corredata di benna mordente o di benna  ... di carburanti, e lubrifcanti, i ricambi, la manutenzione..",
@@ -12698,6 +12931,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.050.b",
       Articolo: "10.60.50.b",
       DesRidotta: "Autogru telescopica autocarrata compreso il conducente/op ... nutenzione, con braccio fino a 22 m e portata fino a 70 t.",
@@ -12752,6 +12986,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.060.a",
       Articolo: "10.60.60.a",
       DesRidotta: "Trattore apripista cingolato, a lama frontale fissa o ori ... anutenzione, assicurazione, potenza HP 90 lama mm 2600x950",
@@ -12806,6 +13041,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.070.a",
       Articolo: "10.60.70.a",
       DesRidotta: "Rullo compressore, già esistente in cantiere, compreso l&apos; ... icurazione, TANDEM VIBRANTE ARTICOLATO HP 13 peso kg. 1300",
@@ -12860,6 +13096,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.070.b",
       Articolo: "10.60.70.b",
       DesRidotta: "Nolo rullo compattatore tipo tandem ferro-ferro da 20 q.li",
@@ -12914,6 +13151,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.080.a",
       Articolo: "10.60.80.a",
       DesRidotta: "Draga a refluizione dotata di motore di opportuna potenza ...  per la navigazione in mare, assistenza navale e terrestre",
@@ -12968,6 +13206,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.060.090.a",
       Articolo: "10.60.90.a",
       DesRidotta: "Noleggio Palancole Metalliche del peso di 140 kg/m²",
@@ -13022,6 +13261,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.a",
       Articolo: "10.65.10.a",
       DesRidotta: "IMPIANTO DI DOSAGGIO E BETONAGGIO DA 60 MC/H completo di  ... ra per funzionamento, consumi, ricambi ed ogni altro onere",
@@ -13076,6 +13316,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.B",
       Articolo: "10.65.10.B",
       DesRidotta: "Impianto di convogliamento malte ai piani",
@@ -13130,6 +13371,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.c",
       Articolo: "10.65.10.c",
       DesRidotta: "GRUPPO PER INIEZIONI DI MALTA DI CEMENTO IN GALLERIA",
@@ -13184,6 +13426,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.d",
       Articolo: "10.65.10.d",
       DesRidotta: "IMPIANTO DI POMPAGGIO E DISTRIBUZIONE ACQUA IN GALLERIA",
@@ -13238,6 +13481,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.e",
       Articolo: "10.65.10.e",
       DesRidotta: "NASTRO TRASPORTATORE PER IMPIEGO IN GALLERIA",
@@ -13292,6 +13536,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.f",
       Articolo: "10.65.10.f",
       DesRidotta: "Miscelatore, con pompa a bassa pressione e tubazioni di m ... llo, per iniezioni di malta nel ripristino delle murature.",
@@ -13346,6 +13591,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.g",
       Articolo: "10.65.10.g",
       DesRidotta: "IMPIANTO DI VENTILAZIONE IN GALLERIA",
@@ -13400,6 +13646,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.h",
       Articolo: "10.65.10.h",
       DesRidotta: "STAZIONE DI MISURA DI DEFORMAZIONI IN GALLERIA",
@@ -13454,6 +13701,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.i",
       Articolo: "10.65.10.i",
       DesRidotta: "IMPIANTO DI ILLUMINAZIONE IN GAL LERIA",
@@ -13508,6 +13756,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.l",
       Articolo: "10.65.10.l",
       DesRidotta: "Impianto di pompaggio di fanghi bentonitici",
@@ -13562,6 +13811,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.m",
       Articolo: "10.65.10.m",
       DesRidotta: "Impianto di dissabbiamento",
@@ -13616,6 +13866,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.n",
       Articolo: "10.65.10.n",
       DesRidotta: "Miscelatore e pompa iniezione",
@@ -13670,6 +13921,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.o",
       Articolo: "10.65.10.o",
       DesRidotta: "Compressore ad aria di potenza 5000 l/min",
@@ -13724,6 +13976,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.p",
       Articolo: "10.65.10.p",
       DesRidotta: "Compressore ad aria di potenza 21000 l/min",
@@ -13778,6 +14031,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     },
     {
       TipoEP: 0,
+      tempoQuantita: 0,
       Tariffa: "10.065.010.q",
       Articolo: "10.65.10.q",
       DesRidotta: "Pacometro multifunzione",
@@ -13831,7 +14085,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
       }
     }
   ]);
-  
+
 
   const handleFilterChange = (event) => {
     const filterValues = event.filter.value.toLowerCase().split('');
@@ -13865,14 +14119,14 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     );
   };
 
- 
+
 
   const remove = (dataItem) => {
 
     const newData = deleteItem(dataItem);
     setLavorazioni([...newData]);
 
-    
+
 
     const { id, importo, ...cleanedDataItem } = dataItem;
 
@@ -13910,7 +14164,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     }));
     setLavorazioni(newLavorazioni);
 
-    
+
   };
 
   const saveChanges = () => {
@@ -14034,7 +14288,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
       enterEdit={enterEdit}
       editField={EDIT_FIELD}
     />
-  ); 
+  );
 
   const customRowRender = (tr, props) => (
     <RowRender
@@ -14062,37 +14316,37 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
 
   console.log(controllo)
 
-  const handleSaveP1 = () => {
+  /* const handleSaveP1 = () => {
     p1Changer(totale);
 
     let newId = 9999;
 
-  // Mappa l'array per sostituire la proprietà id con il nuovo valore decrementale
-  let lavorazioniConNuovoId = lavorazioni.map(obj => {
-    let newObj = { ...obj, id: newId };
-    newId--;
-    return newObj;
-});
+    // Mappa l'array per sostituire la proprietà id con il nuovo valore decrementale
+    let lavorazioniConNuovoId = lavorazioni.map(obj => {
+      let newObj = { ...obj, id: newId };
+      newId--;
+      return newObj;
+    });
 
     updateDetailComponent(lavorazioniConNuovoId);
 
     const now = new Date();
-      const formattedDate = now.toLocaleDateString('it-IT', {
-        day: 'numeric',
-        month: 'numeric',
-        year: 'numeric',
-      }) + ' - ' + now.toLocaleTimeString('it-IT', {
-        hour: '2-digit',
-        minute: '2-digit',
-      });
+    const formattedDate = now.toLocaleDateString('it-IT', {
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+    }) + ' - ' + now.toLocaleTimeString('it-IT', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
 
-      addLogAnalisi({
-        Tariffa: selectedRow.Tariffa,
-        Modifica: `${selectedRow.Tariffa} è stata modificato il prezzo 1 dall'analisi`,
-        Utente: nomeUtente,
-        Orario: formattedDate
-      })
-  };
+    addLogAnalisi({
+      Tariffa: selectedRow.Tariffa,
+      Modifica: `${selectedRow.Tariffa} è stata modificato il prezzo 1 dall'analisi`,
+      Utente: nomeUtente,
+      Orario: formattedDate
+    })
+  }; */
 
   const resetStandard = () => {
     setPercentualeSicurezzaDato(2 / 100);
@@ -14107,7 +14361,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
     <>
       <div className="col-xs-12 col-sm-7 example-col">
         <GridToolbar>
-          <p>Aggiungi voci elementari:</p>
+          <p className="analisi-p">Aggiungi voci elementari:</p>
           <MultiColumnComboBox
             data={filter ? filterBy(source, filter) : source}
             columns={columns}
@@ -14118,6 +14372,10 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
             onChange={handleChange}
             style={{
               width: "300px",
+              margin: "10px",
+              padding: "5px",
+              "border-radius": "10px",
+              border: "1px solid blue",
             }}
             placeholder="Seleziona le voci elementari..."
           />
@@ -14157,7 +14415,7 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
               </button>
             </GridToolbar>
             <Column field="Tariffa" title='Tariffa' width={"150px"} editable={false}></Column>
-            <Column field="DesRidotta" title='Lavorazione' width={"800px"} editable={false}></Column>
+            <Column field="DesRidotta" title='Lavorazione' width={"600px"} editable={false}></Column>
             <Column field="UnMisura" title='Unità' width={"80px"} editable={false}></Column>
             <Column field="tempoQuantita" width={"140px"} title='Tempo / Quantità' editor="numeric"></Column>
             <Column field="Prezzo1" title='Costo Unitario' width={"120px"} editable={false}></Column>
@@ -14166,49 +14424,61 @@ const AutoCompleteSelect = ({ p1Changer, updateDetailComponent, detProps, nomeUt
             <Column cell={CommandCell} width="240px" />
           </Grid>
         </GridContext.Provider>
-        <div>
-          <p>Sommano: €{subTotale}</p>
-          <p>Oneri Sicurezza
-            <input
-              type="number"
-              placeholder="2"
-              value={popUpSicurezza}
-              name="sicurezza"
-              onChange={(e) => setPopUpSicurezza(e.target.value)}
-            />
-            %: €{percentualeSicurezza}
-          </p>
-          <p>---</p>
-          <p>Sommano: €{subTotaleSicurezza}</p>
-          <p>Spese Generali
-            <input
-              type="number"
-              placeholder="15"
-              value={popUpSGenerali}
-              name="generali"
-              onChange={(e) => setPopUpSGenerali(e.target.value)}
-            />
-            % * ({percentualeSicurezza}): €{percentualeSGenerali}
-          </p>
-          <p>---</p>
-          <p>Sommano: €{subTotaleSGenerali}</p>
-          <p>Utili Impresa
-            <input
-              type="number"
-              placeholder="10"
-              value={popUpUtili}
-              name="utili"
-              onChange={(e) => setPopUpUtili(e.target.value)}
-            />
-            % * ({percentualeSGenerali}): €{percentualeUtili}
-          </p>
-          <p>---</p>
-          <h1>T O T A L E euro/ a corpo: {totale}</h1>
-          <div className="input-container">
-            <button onClick={resetStandard}>Ripristina Standard</button>
-            <button onClick={handleSave}>Salva</button>
-            <button onClick={handleSaveP1}>Modifica Prezzo 1</button>
+        <div className="analisi-results">
+
+          <div className="analisi-sum">
+          <p className="analisi-sum-right">Sommano: €{subTotale}</p>
+            <p>Oneri Sicurezza
+              <input
+                type="number"
+                placeholder="2"
+                value={popUpSicurezza}
+                name="sicurezza"
+                onChange={(e) => setPopUpSicurezza(e.target.value)}
+              />
+              %: €{percentualeSicurezza}
+            </p>
           </div>
+          <p className="analisi-arrow">►</p>
+          <div className="analisi-sum">
+          <p className="analisi-sum-right">Sommano: €{subTotaleSicurezza}</p>
+            <p>Spese Generali
+              <input
+                type="number"
+                placeholder="15"
+                value={popUpSGenerali}
+                name="generali"
+                onChange={(e) => setPopUpSGenerali(e.target.value)}
+              />
+              % * ({percentualeSicurezza}): €{percentualeSGenerali}
+            </p>
+          </div>
+          <p className="analisi-arrow">►</p>
+          <div className="analisi-sum">
+            <p className="analisi-sum-right">Sommano: €{subTotaleSGenerali}</p>
+            <p>Utili Impresa
+              <input
+                type="number"
+                placeholder="10"
+                value={popUpUtili}
+                name="utili"
+                onChange={(e) => setPopUpUtili(e.target.value)}
+              />
+              % * ({percentualeSGenerali}): €{percentualeUtili}
+            </p>
+          </div>
+        </div>
+        <div className="analisi-total">
+          <h1 className={totale === 0 ? "" : "green"}>T O T A L E euro/ a corpo: <span>{totale}</span></h1>
+        </div>
+        <div className="input-container">
+          <button 
+          className="k-button k-button-md k-button-solid k-button-solid-info analisi-button"
+           onClick={resetStandard}>Ripristina Standard</button>
+          <button 
+          className="k-button k-button-md k-button-solid k-button-solid-info analisi-button"
+           onClick={handleSave}>Salva</button>
+          {/* <button onClick={handleSaveP1}>Modifica Prezzo 1</button> */}
         </div>
       </div>
     </>
