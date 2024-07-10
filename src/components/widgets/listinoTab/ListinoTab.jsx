@@ -546,6 +546,18 @@ const ListinoTab = ({ nomeUtente, close, open, openSet, setValue, openLog, logVa
   const handleAddRow = () => {
     const newRow = {
       Tariffa: data.length + 1,
+      IDSupCap: {
+        DesSintetica: "AGGIUNTA NUOVA VOCE",
+        DesEstesa: "AGGIUNTA NUOVA VOCE",
+      },
+      IDCap:{
+        DesSintetica: "AGGIUNTA NUOVA VOCE",
+        DesEstesa: "AGGIUNTA NUOVA VOCE",
+      },
+      IDSbCap:{
+        DesSintetica: "AGGIUNTA NUOVA VOCE",
+        DesEstesa: "AGGIUNTA NUOVA VOCE",
+      },
     };
     setData([newRow, ...data]);
     setEditID(newRow.Tariffa);
