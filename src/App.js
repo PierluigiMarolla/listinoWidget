@@ -42,9 +42,9 @@ const App = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchData();
-  }, [logOpen]);
+  }, [fetchData, logOpen]);
   
 
 
