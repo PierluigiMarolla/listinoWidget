@@ -43,8 +43,8 @@ const App = () => {
       }
     };
 
-    fetchData();
-  }, [logOpen, dataLog]);
+    fetchData(); // eslint-disable-next-line
+  }, [logOpen]); 
   
 
 
